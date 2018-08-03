@@ -11,32 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :account_id %>
-    <%= form.number_field :account_id %>
+  <div class="row">
+      <div class="col-md-4 col-lg-4">
+            <%= form.label :arrive %>
+            <%= form.number_field :checkin_day, class: "form-control datepicker" %>
+      </div>
+      <div class="col-md-4 col-lg-4">
+            <%= form.label :check_out %>
+            <%= form.number_field :checkout_day, class: "form-control datepicker" %>
+            <br>
+            <br>
+            
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :adults %>
-    <%= form.number_field :adults %>
+  <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= form.label :adults %>
+        <%= form.select :adults, options_for_select(["0", "1 Adult"]), {}, class: "form-control" %>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <%= form.label :children %>
+        <%= form.select :children, options_for_select(["0", "1 between 0-5"]), {}, class: "form-control" %>
+        <br>
+        <br>
+        <br>
+        
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :children %>
-    <%= form.number_field :children %>
-  </div>
 
-  <div class="field">
-    <%= form.label :room_id %>
-    <%= form.number_field :room_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= form.submit "Create Booking", class: "btn btn-success btn-lg" %>
+      </div>
   </div>
 <% end %>
+<script>
+$(function() {
+      $('.datepicker').datepicker();
+});
+</script>
