@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # associations
-  has_one :account
+  has_one  :account
+  has_many :bookings
 end

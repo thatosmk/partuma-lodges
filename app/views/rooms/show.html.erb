@@ -34,6 +34,6 @@
   <strong>Check out:</strong>
   <%= @room.check_out %>
 </p>
-
+<%= link_to "Book Room", new_room_booking_path(@room.id), class: "btn btn-info btn-lg"%>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

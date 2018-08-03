@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :rooms
+  resources :rooms do
+      resources :bookings
+  end
   get 'registrations/after_sign_up_path_for'
   get 'registration/after_sign_up_path_for'
   resources :accounts
