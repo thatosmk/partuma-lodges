@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6-col-lg-6">
+            <h1 class="page-header">Add Profile Picture</h1>
+            <%= form_with(model: current_user.account, local: true) do |f|%>
+                <%= f.file_field :avatar %>
+                <%= f.submit "Add Picture" %>
+            <% end %>
+            
+        </div>
+    </div>
+</div>

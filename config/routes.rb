@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'avatar/create'
+  get 'avatar/update'
+  get 'avatar/destroy'
   resources :rooms do
       resources :bookings
   end
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
   resources :events
   get 'site/about'
   get 'site/contact'
+  get 'site/profile', to: "site#profile", as: '/profile'
 
   devise_for :users, controllers: { registrations: "registrations" }
 

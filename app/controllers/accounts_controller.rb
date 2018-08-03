@@ -26,9 +26,13 @@ class AccountsController < ApplicationController
   # POST /accounts.json
   def create
     @account = current_user.build_account(account_params)
+    
 
     respond_to do |format|
       if @account.save
+          if(params[:account][:avatar])
+            current_user.avatar.attach(params[:account][:avatar])
+          end
         format.html { redirect_to root_url, notice: 'Account was successfully created.' }
         format.json { render :show, status: :created, location: @account }
       else
@@ -43,6 +47,9 @@ class AccountsController < ApplicationController
   def update
     respond_to do |format|
       if @account.update(account_params)
+          if(params[:account][:avatar])
+            current_user.avatar.attach(params[:account][:avatar])
+          end
         format.html { redirect_to @account, notice: 'Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @account }
       else

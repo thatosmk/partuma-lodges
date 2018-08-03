@@ -7,4 +7,8 @@ class SiteController < ApplicationController
 
   def contact
   end
+
+  def profile
+    @user = current_user
+  end
 end
