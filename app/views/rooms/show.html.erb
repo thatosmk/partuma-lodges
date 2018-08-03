@@ -40,5 +40,8 @@
 <% @room.images.each do |img|%>
     <%= image_tag(img)%><br />
 <% end %>
+
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
+<% end %>
