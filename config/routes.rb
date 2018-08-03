@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'registrations/after_sign_up_path_for'
+  get 'registration/after_sign_up_path_for'
+  resources :accounts
+  resources :events
   get 'site/about'
   get 'site/contact'
-  devise_for :users
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   # setup root page
   root to: "site#index"
