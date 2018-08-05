@@ -25,11 +25,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.images.attach(params[:event][:images])
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
+        format.html { redirect_to events_url, notice: 'Event was successfully created.' }
+        format.json { render :index, status: :created, location: @events }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }

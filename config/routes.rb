@@ -3,18 +3,23 @@ Rails.application.routes.draw do
   get 'avatar/create'
   get 'avatar/update'
   get 'avatar/destroy'
+
   resources :rooms do
       resources :bookings
   end
-  get 'registrations/after_sign_up_path_for'
-  get 'registration/after_sign_up_path_for'
-  resources :accounts
   resources :events
-  get 'site/about'
-  get 'site/contact'
-  get 'site/profile', to: "site#profile", as: '/profile'
 
+  # serve /site/ pages
+  get '/about-us', to: "site#about", as: '/about'
+  get '/contact-us', to: "site#contact", as: '/contact'
+  get '/profile', to: "site#profile", as: '/profile'
+  get '/dashboard', to: "site#dashboard", as: '/dashboard'
+  get '/users', to: "site#users", as: '/users'
+  get '/room-bookings', to: "site#room_bookings", as: '/bookings'
+
+  # serve user management
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :accounts
 
   # setup root page
   root to: "site#index"

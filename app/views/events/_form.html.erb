@@ -11,27 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_field :name, class: "form-control", placeholder: "event name" %>
+        <br>
+        <br>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_area :description, class: "form-control", placeholder: "event details", rows: 10 %>
+        <br/><br/>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :event_date %>
-    <%= form.date_select :event_date %>
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_field :event_date, class: "form-control datepicker", placeholder: "date of event" %>
+        <br/><br/>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :event_time %>
-    <%= form.text_field :event_time %>
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_field :event_time, class: "form-control datepicker", placeholder: "time of event" %>
+        <br/><br/>
+      </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-3">
+            <%= form.label :upload_images %> 
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-3">
+            <%= form.file_field :images, multiple: true %> 
+        <br/><br/>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+            <%= form.submit "Create Event", class: "btn btn-success btn-block" %>
+      </div>
   </div>
 <% end %>

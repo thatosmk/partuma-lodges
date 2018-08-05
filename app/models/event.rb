@@ -1,5 +1,8 @@
 class Event < ApplicationRecord
 
+    # associate model with picture of the event(many)
+    has_many_attached :images
+
     #validations
     validates_presence_of :name
     validates_presence_of :description

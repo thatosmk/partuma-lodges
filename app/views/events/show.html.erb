@@ -1,24 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-md-2 col-lg-2 sidebar">
+            <%= render 'site/sidebar' %> 
+        </div>
+        <div class="col-sm-3 col-md-8 col-lg-8">
+            <div class="row">
+                <p class="page-header lead">
+                  <%= @event.name %>
+                </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+                <p class="lead">
+                  <%= @event.description %>
+                </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+                <p class="lead">
+                  <strong>Event date:</strong>
+                  <%= @event.event_date %>
+                </p>
 
-<p>
-  <strong>Event date:</strong>
-  <%= @event.event_date %>
-</p>
+                <p class="lead">
+                  <%= @event.event_time %>
+                </p>
 
-<p>
-  <strong>Event time:</strong>
-  <%= @event.event_time %>
-</p>
+                <% if user_signed_in? && current_user.admin? %>
+                    <div class="row">
+                        <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-success" %> 
+                        <%= link_to 'Back', events_path, class: "btn btn-primary" %>
+                        <%= link_to 'Delete', events_path,method: :delete,  class: "btn btn-danger" %>
+                    </div>
+                    <br/><br/>
+                <% end %>
+            </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+            <div class="row">
+                <% @event.images.each do |img| %> 
+                    <%= image_tag(img)%>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
+            <%= render 'site/sidebar' %> 
+        </div>
+        <div class="col-sm-9 col-md-8 col-lg-8">
+            <div class="row">
+                <h1 class="page-header">Users</h1>
+            </div>
+            <table class="table table-striped">
+                <th>
+                    <td>Name</td>
+                    <td>Surname</td>
+                    <td>Email</td>
+                </th>
+                <% @users.each do |user|%>
+                    <tr>
+                        <td><%= user.account.name%></td>
+                        <td><%= user.account.surname%></td>
+                        <td><%= user.email%></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</div>

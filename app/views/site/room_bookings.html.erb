@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
+            <%= render 'site/sidebar' %> 
+        </div>
+        <div class="col-sm-9 col-md-8 col-lg-8">
+            <div class="row">
+                <h1 class="page-header">Bookings</h1>
+            </div>  
+
+            <div class="row">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Room Name</th>
+                        <th>Customer</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Adults</th>
+                        <th>Children</th>
+                    </tr>
+                    <% @bookings.each do |booking| %>
+                        <tr>
+                            <td><%= link_to booking.room.room_name, booking.room %></td>
+                            <td><%= Account.find(booking.account_id).name %>&nbsp;&nbsp;<%= Account.find(booking.account_id).surname %></td>
+                            <td><%= booking.checkin_day%></td>
+                            <td><%= booking.checkout_day%></td>
+                            <td><%= booking.adults%></td>
+                            <td><%= booking.children%></td>
+                        </tr>
+                    <% end %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

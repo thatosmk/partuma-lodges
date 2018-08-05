@@ -16,17 +16,14 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
+					<% if user_signed_in? %>
+                        <li><a href="/dashboard">dashboard</a></li>
+                        <li><%= link_to "Profile",profile_url, class: ""%></li>
+                        <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
+					<% else %>
                         <li><a href="/events">Events</a></li>
                         <li><a href="#">Host Meetings</a></li>
                         <li><a href="/rooms">Book a Room</a></li>
-					<% if user_signed_in? %>
-						<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= fa_icon "user-circle", class: "fa-2x" %>&nbsp;&nbsp;<span class="caret"></span></a>
-								  <ul class="dropdown-menu">
-									<li><%= link_to "Profile",profile_url, class: ""%></li>
-                                    <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
-								</ul>
-					<% else %>
 						<li class=""><%= link_to "LOGIN", new_user_session_path%></li>
 						<li><%= link_to "SIGN UP",new_user_registration_path, class:"active"%></li>
 					<% end %>
