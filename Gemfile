@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.0'
 gem 'sqlite3', group: :development
 
 # add production gems
-gem 'pg', '0.18.1', group: :production
+#gem 'pg', '0.18.1', group: :production
 gem 'rails_12factor', group: :production
 gem "figaro"
 

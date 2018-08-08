@@ -15,15 +15,12 @@
     </div>
     <div class="row">
         <div class="container">
-        <% Room.all.limit(3).each do |room| %>
             <div class="col-xs-6 col-md-4 venue-room">
                 <div class="thumbnail">
                     <p class="lead text-center">
-                        <%= link_to "View Room", room, class: "btn btn-default"%> 
                     </p>
                 </div>
             </div>
-        <% end %>
         </div>
     </div>
 </div>
