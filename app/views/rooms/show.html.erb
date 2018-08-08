@@ -1,47 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <h1 class="page-header"><%= @room.room_name %></h1>
+    </div>
+    <div class="row">
+            <% @room.images.each do |img|%>
+        <div class="col-md-5 room-showcase">
+                <%= image_tag(img, class: "img-show")%><br />
+        
+        </div>
+            <% end %>
+    </div>
+    <div class="row">
+        <h2 class="page-header text-muted">Room Details</h2>
+        <p class="lead">
+          <strong>Room name:</strong>
+          <%= @room.room_name %>
+        </p>
 
-<p>
-  <strong>Room name:</strong>
-  <%= @room.room_name %>
-</p>
+        <p class="lead">
+          <%= @room.description %>
+        </p>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @room.description %>
-</p>
+    <div class="row">
+        <h2 class="page-header">Amenities</h2>
+            <p class="lead">
+              <%= @room.amenities %>
+              <br><br>
+            </p>
+    </div>
+    <div class="row">
+        <p class="lead">
+            <%= link_to "Book now at #{@room.price}", new_room_booking_path(@room.id), class:"btn btn-success btn-lg" %>
+        </p>
+    </div>
+    <div class="row">
+        <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'Edit', edit_room_path(@room) %> |
+        <%= link_to 'Back', rooms_path %>
+        <% end %>
+    </div>
+</div>
 
-<p>
-  <strong>Amenities:</strong>
-  <%= @room.amenities %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @room.price %>
-</p>
-
-<p>
-  <strong>Booking:</strong>
-  <%= @room.booking_id %>
-</p>
-
-<p>
-  <strong>Check in:</strong>
-  <%= @room.check_in %>
-</p>
-
-<p>
-  <strong>Check out:</strong>
-  <%= @room.check_out %>
-</p>
-
-<%= link_to "Book Room", new_room_booking_path(@room.id), class: "btn btn-info btn-lg"%>
-
-<% @room.images.each do |img|%>
-    <%= image_tag(img)%><br />
-<% end %>
-
-<% if user_signed_in? && current_user.admin? %>
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
-<% end %>
