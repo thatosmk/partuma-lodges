@@ -1,44 +1,37 @@
 <div class="container">
     <p id="notice"><%= notice %></p>
     <div class="row">
-        <h1 class="page-header">Book a room</h1>
+        <div class="rooms-img-row">
+            <h1 class="rooms-header">Book one of our rooms</h1>
+        </div>
     </div>
-    <div class="row">
-        <h3 class="text-muted">Filter</h3>
-        <%= form_tag rooms_path, :method => 'get',class: "form-inline pull-left input-group-lg", :local => 'true' do%>
-            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "search..." %>    
-            <%= text_field_tag :from_date, params[:from_date], class: "form-control datepicker", placeholder: "search..." %>    
-            <%= submit_tag "search", class: "btn btn-default btn-lg" %>
- <br>
-<br>
-<br>
-<br>
+    <% if user_signed_in? && current_user.admin? %>
+        <div class="row">
+            <br /><br />
+            <%= link_to "Add new room", new_room_path, class: "btn btn-info btn-lg"%>
+        </div>
+    <% end %>
 
-       <% end %>
-    </div>
-    
     <div class="row">
+            <br /><br />
         <% @rooms.each do |room| %>
-            <div class="col-sm-4 col-md-4 col-lg-3">
+            <div class="col-sm-4 col-md-4 col-lg-3 room-img-div">
+                <div class="row">
                 <% if room.images.attached? %>
-                <%= image_tag(room.images.last, class: "img-thumbnail")%>
+                    <p><%= image_tag(room.images.last, class: "img-thumbnail", height: 250, width: 350)%></p>
                 <% end %>
-                <%= link_to room.room_name, room %>
-            <%= room.description %>
-            <%= room.amenities %>
-            <%= room.price %>
-            <%= room.booking_id %>
-            <%= room.check_in %>
-            <%= room.check_out %>
-            <% if user_signed_in? && current_user.admin? %>
-                <%= link_to 'Edit', edit_room_path(room) %>
-                <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
+                </div>
+                <div class="row">
+                    <p class="lead pull-left"><%= room.room_name %></p>
+
+                    <p class="lead pull-right">
+                        <%= link_to "View Room", room, class: "btn btn-default pull-right" %>
+                    </p>
+                </div>
             </div>
         <% end %>
     </div>
 
-<%= link_to 'New Room', new_room_path %>
 <div class="row" style="height: 300px;"></div>
 </div>
 <script>

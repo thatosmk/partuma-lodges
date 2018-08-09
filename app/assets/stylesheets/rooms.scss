@@ -1,8 +1,49 @@
 // This scss file manages the Rooms views
-.room-showcase
+.rooms-img-row
 {
-   margin-right: 60px; 
+    background-image: url("mattress_small.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    border-radius: 5px;
+}
 
+.rooms-img-row .rooms-header
+{
+    color: #fff;
+    font-size: 5.0em;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 150px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.room-img-div
+{
+    height: 300px;
+    padding: 15px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.img-preview
+{
+    height: 500px;
+}
+.room-book-details
+{
+    border: 1px solid #001234;
+    border-radius: 25px;
+    height: 500px;
+    padding: 15px;
+    position: relative;
+}
+.room-book-details .booking-form
+{
+    padding-left: 20px;
+    padding-top: 50px;
+    
 }
 .room-showcase .img-show
 {
@@ -10,3 +51,10 @@
     height: 400px;
     width: 100%;
 }
+
+.img-div
+{
+    border-radius: 15px;
+    width: 360px;
+}
+

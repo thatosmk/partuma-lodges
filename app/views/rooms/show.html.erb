@@ -3,20 +3,23 @@
         <h1 class="page-header"><%= @room.room_name %></h1>
     </div>
     <div class="row">
-            <% @room.images.each do |img|%>
-        <div class="col-md-5 room-showcase">
-                <%= image_tag(img, class: "img-show")%><br />
-        
+        <div class="col-sm-6 col-md-7 col-lg-7">
+                <%= image_tag(@room.images.last, class: "img-thumbnail img-preview")%><br />
         </div>
-            <% end %>
+        <div class="col-sm-6 col-md-5 col-lg-5 room-book-details">
+            <div class="row">
+                <p class="lead text-center">R <%= @room.price %> per night</p>
+            </div>
+            <div class="row booking-form">
+                <%= render 'bookings/form', room: @room %>
+            </div>
+            <div class="row">
+                <p class="alert text-center text-muted">You won't be charged yet.</p>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <h2 class="page-header text-muted">Room Details</h2>
-        <p class="lead">
-          <strong>Room name:</strong>
-          <%= @room.room_name %>
-        </p>
-
+        <h2 class="page-header text-muted"><%= @room.room_name %></h2>
         <p class="lead">
           <%= @room.description %>
         </p>
@@ -24,20 +27,32 @@
 
     <div class="row">
         <h2 class="page-header">Amenities</h2>
-            <p class="lead">
-              <%= @room.amenities %>
-              <br><br>
-            </p>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <ul class="list-group">
+            <% @room.amenities.split("\n").each do |an|%>
+                <li class=""><%= an %></li>
+                <br/>
+            <% end %>
+            </ul>
+          <br><br>
+        </div>
     </div>
     <div class="row">
-        <p class="lead">
-            <%= link_to "Book now at #{@room.price}", new_room_booking_path(@room.id), class:"btn btn-success btn-lg" %>
-        </p>
+        <h1 class="page-header text-warning">Photos</h1>
+        <div class="row">
+            <% @room.images.each do |img|%> 
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <%= image_tag(img,  class: "img-div" )%> 
+                    <br/><br/>
+                </div>
+            <% end %>
+        </div>
     </div>
-    <div class="row">
         <% if user_signed_in? && current_user.admin? %>
-        <%= link_to 'Edit', edit_room_path(@room) %> |
-        <%= link_to 'Back', rooms_path %>
+    <div class="row">
+        <h1 class="page-header page-muted">Make Changes</h1>
+        <%= link_to 'Edit Room', edit_room_path(@room), class: "btn btn-primary btn-lg" %> 
+        <%= link_to 'Delete Room', room_path(@room), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg"%>
         <% end %>
     </div>
 </div>

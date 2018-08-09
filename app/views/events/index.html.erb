@@ -26,19 +26,32 @@
 </div>
 <% else %>
 <div class="container">
-        <div class="col-sm-3 col-md-8 col-lg-8">
-            <p id="notice"><%= notice %></p>
+        <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
-                <h2 class="page-header"><%= pluralize(@events.count, 'Event')%></h2>
+                <div class="events-div-0">
+                    <h1 class="jazz-header">Jazz Events</h1>  
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="page-header"><%= pluralize(@events.count, 'Upcoming Event')%></h2>
                 <% @events.each do |event| %>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <h3 class="text-info"><%= link_to event.name, event %></h3>
-                            <p class="lead"><%= event.description %></p>
-                            <p class="lead"><%= event.event_date %>, at <%= event.event_time %></p>
+                <div class="row media-events-row">
+                    <div class="media media-middle">
+                        <div class="media-left">
+                            <%= image_tag("sax_event.jpeg", class: "media-object", alt: "", height: 150)%>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><%= event.name %></h4><br />
+                            <p class="text-muted"><%= event.description %></p><br/>
+                            <strong>when: </strong>
+                            <p class="text-info"><%= event.event_date %>, at <%= event.event_time %></p>
                         </div>
                     </div>
+                </div>
                 <% end %>
+            </div>
+            <div class="row">
+                <h1 class="page-header text-info">Previous Events</h1>
             </div>
         </div>
 </div>
