@@ -44,6 +44,16 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ahoy_matey (2.1.0)
+      addressable
+      browser (~> 2.0)
+      device_detector
+      geocoder (>= 1.4.5)
+      railties (>= 4.2)
+      referer-parser (>= 0.3)
+      request_store
+      safely_block (>= 0.2.1)
+      user_agent_parser
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -56,6 +66,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    browser (2.5.3)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.4.2)
@@ -65,6 +76,7 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    chartkick (2.3.5)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -79,12 +91,14 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    device_detector (1.0.1)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    errbase (0.1.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -94,10 +108,15 @@ GEM
       railties (>= 3.2, < 6.0)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -168,11 +187,16 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    referer-parser (0.3.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
+    safely_block (0.2.1)
+      errbase
     sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -210,6 +234,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.17)
       execjs (>= 0.3.0, < 3)
+    user_agent_parser (2.4.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -227,16 +252,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ahoy_matey
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3.7)
   byebug
   capybara (>= 2.15, < 4.0)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   figaro
   font-awesome-rails (~> 4.6, >= 4.6.3.1)
   font-awesome-sass (~> 4.3, >= 4.3.2.1)
+  groupdate
+  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails

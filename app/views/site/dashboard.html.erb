@@ -4,10 +4,9 @@
             <%= render 'site/sidebar' %> 
         </div>
         <div class="col-sm-9 col-md-8 col-lg-8 main-wrapper">
+            <h1 class="page-header">Daily Visitors</h1>
             <% if current_user.admin? %>             
-                <%= 0%>
-            <% else %>
-                <%= 0%>
+                <%= line_chart @visits.group_by_day(:started_at).count %>
             <% end %>
         </div>
     </div>

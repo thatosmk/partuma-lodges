@@ -38,6 +38,16 @@
                 <br>
               </div>
           </div>
+
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                <%= form.label :room_type %>
+                <%= form.select :room_type, options_for_select(["Accommodation", "Venue"]), {}, class: "form-control", placeholder: "price for room" %>
+                <br>
+                <br>
+              </div>
+          </div>
+
       </div>
 
       <div class="col-sm-6 col-md-6 col-lg-6">
@@ -58,38 +68,29 @@
               </div>
           </div>
 
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-6">
-            <%= form.label :allowed_checkout_time %> 
-        <%= form.text_field :check_out, class: "form-control datepicker" %>
-        <br><br>
-      </div>
-  </div>
+          <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-6">
+                    <%= form.label :allowed_checkout_time %> 
+                <%= form.text_field :check_out, class: "form-control datepicker" %>
+                <br><br>
+              </div>
+          </div>
 
+          <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-6">
+                    <%= form.label :upload_images %> 
+                    <%= form.file_field :images, multiple: true %> 
+                <br/><br/>
+              </div>
+          </div>
       
       </div>
   
   </div>
 
-
-
-
   <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.label :upload_images %> 
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.file_field :images, multiple: true %> 
-        <br/><br/>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-        <%= form.submit "Create Room", class: "btn btn-success btn-block" %>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= form.submit "Create Room", class: "btn btn-success btn-lg" %>
       </div>
   </div>
 <% end %>

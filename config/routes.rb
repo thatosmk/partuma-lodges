@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: "site#dashboard", as: '/dashboard'
   get '/users', to: "site#users", as: '/users'
   get '/room-bookings', to: "site#room_bookings", as: '/bookings'
+  get '/venues', to: "site#venues", as: '/venues'
 
   # serve user management
   devise_for :users, controllers: { registrations: "registrations" }

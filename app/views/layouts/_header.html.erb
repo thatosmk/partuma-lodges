@@ -23,7 +23,7 @@
                         <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
 					<% else %>
                         <li><a href="/events">Events</a></li>
-                        <li><a href="#">Host Meetings</a></li>
+                        <li><a href="/venues">Host Meetings</a></li>
                         <li><a href="/rooms">Book a Room</a></li>
 						<li class=""><%= link_to "LOGIN", new_user_session_path%></li>
 						<li><%= link_to "SIGN UP",new_user_registration_path, class:"active"%></li>

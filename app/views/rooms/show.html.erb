@@ -7,15 +7,27 @@
                 <%= image_tag(@room.images.last, class: "img-thumbnail img-preview")%><br />
         </div>
         <div class="col-sm-6 col-md-5 col-lg-5 room-book-details">
-            <div class="row">
-                <p class="lead text-center">R <%= @room.price %> per night</p>
-            </div>
-            <div class="row booking-form">
-                <%= render 'bookings/form', room: @room %>
-            </div>
-            <div class="row">
-                <p class="alert text-center text-muted">You won't be charged yet.</p>
-            </div>
+            <% if @room.room_type == "accommodation"%>
+                <div class="row">
+                    <p class="lead text-center">R <%= @room.price %> per night</p>
+                </div>
+                <div class="row booking-form">
+                    <%= render 'bookings/form', room: @room %>
+                </div>
+                <div class="row">
+                    <p class="alert text-center text-muted">You won't be charged yet.</p>
+                </div>
+            <% else %>
+                <div class="row">
+                    <p class="lead text-center">R <%= @room.price %> per day</p>
+                </div>
+                <div class="row booking-form">
+                    <%= render 'bookings/form', room: @room %>
+                </div>
+                <div class="row">
+                    <p class="alert text-center text-muted">You won't be charged yet.</p>
+                </div>
+            <% end %>
         </div>
     </div>
     <div class="row">

@@ -12,6 +12,7 @@ class SiteController < ApplicationController
   end
 
   def dashboard
+    @visits = Ahoy::Visit.all
   end
 
   def contact
@@ -25,4 +26,7 @@ class SiteController < ApplicationController
     @users = User.all
   end
 
+  def venues
+    @rooms = Room.where(room_type: "Venue").all
+  end
 end
