@@ -20,6 +20,14 @@
 @import "site";
 @import "rooms";
 
+.navbar-brand
+{
+    font-size: 2.4em;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 40px;
+
+}
 
 /*
  *
@@ -63,12 +71,16 @@
  * Footer style contents 
  *
  */
+/* Small devices (tablets, 425px and down) */
+@media (max-width: 425px ) 
+{
 .footer
 {
-    background-color: #333;
+    background-color: #515151;
     color: #fff;
-    height: 300px;
+    height: 600px;
     padding: 20px;
+    margin-bottom: 0px;
 }
 
 .footer .footer-heading
@@ -84,4 +96,31 @@
 {
     color: #fff;
     padding-right: 10px;
+}
+}
+@media (min-width: 768px ) 
+{
+.footer
+{
+    background-color: #515151;
+    color: #fff;
+    height: 400px;
+    padding: 20px;
+    margin-bottom: 0px;
+}
+
+.footer .footer-heading
+{
+    font-size: 2.0em;
+    font-weight: 300;
+}
+.footer .text-white
+{
+    color: #fff;
+}
+.footer .fa
+{
+    color: #fff;
+    padding-right: 10px;
+}
 }

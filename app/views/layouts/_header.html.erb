@@ -10,7 +10,7 @@
 			</button>
 
 			<ul class="nav navbar-nav navbar-left">
-                <li><a class="navbar-brand" href="/">Partuma Lodge</a></li>
+                <li><a class="navbar-brand" href="/">partuma</a></li>
 			</ul>
 		</div>
 
@@ -22,9 +22,9 @@
                         <li><%= link_to "Profile",profile_url, class: ""%></li>
                         <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
 					<% else %>
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/venues">Host Meetings</a></li>
-                        <li><a href="/rooms">Book a Room</a></li>
+                        <li><a href="/events">Jazz</a></li>
+                        <li><a href="/venues">Plan your Event</a></li>
+                        <li><a href="/rooms">Bookings</a></li>
 						<li class=""><%= link_to "LOGIN", new_user_session_path%></li>
 						<li><%= link_to "SIGN UP",new_user_registration_path, class:"active"%></li>
 					<% end %>

@@ -1,79 +1,87 @@
 <div class="row index-0">
-    <h1 class="text-danger">Partuma Lodge</h1>
-    <p class="lead">A 100% woman owned holiday<br/> destination in Parys, Free State.</p>
-    <p class="lead">
+    <p class="lead index-par">A 100% woman owned holiday<br/> destination in Parys, Free State.</p>
+    <div class="div-btn">
         <%= link_to "About us", about_url, class: "btn btn-danger btn-lg"%>
-    </p>
+    </div>
 </div>
 
-<div class="row venue-row">
+<div class="row home-row">
     <div class="row">
-        <h1 class="text-center">A Second Home</h1>
-        <p class="lead text-center">
-            Stay a night or more with us, enjoy our complimentary service.
+        <h1 class="text-center text-muted home-row-header">We Host your Events</h1>
+        <p class="lead text-center home-row-p">
+         we have 2 big gardens for outdoor functions, a small garden and a hall.
+         <br/>We have enough space to host a graduation party as well as private functions.
         </p>
     </div>
     <div class="row">
         <div class="container">
-            <div class="col-xs-6 col-md-4 venue-room">
-                <div class="thumbnail">
+            <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                <div class="thumbnail venue-room">
                     <p class="lead text-center">
                     </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="row home-row">
-    <div class="row">
-        <h2 class="text-center text-muted">Hire a Venue</h2>
-        <p class="lead text-center">
-        You can hire our venue for all sorts of events you have in mind. <br/>We have enough space to host a graduation party as well as private functions.
-        </p>
-    </div>
-    <div class="row">
-        <div class="container">
-            <div class="col-lg-4 img-venue-1"></div>
-            <div class="col-lg-3 img-venue-3"></div>
-            <div class="col-lg-4 img-venue-4"></div>
-        </div>
-    </div>
     <div class="row">
         <p class="lead text-center">
-            <%= link_to "View Venue Options", rooms_url, class: "btn btn-success btn-lg"%>
         </p>
     
     </div>
 </div>
+<div class="row venue-row">
+    <div class="row">
+        <h1 class="text-center venue-header">A Second Home</h1>
+        <p class="lead text-center venue-p">
+            Stay a couple of nights with us.
+        </p>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                <div class="thumbnail venue-room">
+                    <p class="lead text-center">
+                    </p>
+                </div>
+            <%= link_to "Book a Room", rooms_path, class: "btn btn-default btn-block"%>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="container events-row">
         <div class="row">
-            <h2 class="text-center text-muted">Our Jazz <strong>Club</strong></h2>
+            <h1 class="text-center text-muted events-header">Our Jazz <strong>Club</strong></h1>
         </div>
         <div class="row">
-            <p class="lead text-center">
+            <p class="lead text-center events-p">
                 celebrate with family or your friends, make memories with us 
             </p>
         </div>
         <div class="row">
-            <p class="text-center">
-                <%= link_to "Join an Event", rooms_url, class: "btn btn-default btn-lg"%>
-            </p>
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                <div class="thumbnail venue-room">
+                    <p class="lead text-center">
+                    </p>
+                </div>
+                <%= link_to "Join an Event", rooms_url, class: "btn btn-default btn-block"%>
+            </div>
         </div>
-
+        </div>
     </div>
 </div>
 <div class="row">
-    <div class="container">
-        <p class="lead">
+    <div class="container text-center events-row">
+        <h1 class="events-header text-muted">Premier Service</h1>
+        <p class="lead events-p">
         As one of the premier guest house in Parys – our attention to detail, <br/>
         excellent service and cultured hospitality will make you feel at home. <br/>
-        Our Jazz Club also plays host to international acts and local events.  
         </p>
         <p class="lead">
-            <%= link_to "Sign in to make a booking", new_user_registration_path, class: "btn btn-success btn-lg"%>
+            <%= link_to "Make a booking", new_user_registration_path, class: "btn btn-success btn-lg"%>
         </p>
     </div>
 </div>

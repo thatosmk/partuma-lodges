@@ -2,6 +2,387 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/* Small devices (tablets, 425px and down) */
+@media (max-width: 425px ) 
+{
+    .index-0
+    {
+        height: 50vh;
+        background-color: #fca311;
+        color: #fff;
+        margin-top: -20px;
+    }
+
+    .index-0 .index-par
+    {
+        padding-left: 60px;
+        padding-top: 120px;
+        font-size: 2.2em;
+        font-weight: 400;
+    }
+
+    .index-0 .div-btn
+    {
+        padding-left: 60px;
+    }
+
+    .home-row
+    {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .home-row .home-row-header
+    {
+       font-size: 2.8em; 
+       font-weight: 600;
+    }
+
+    .home-row .home-row-p
+    {
+       padding-top: 30px; 
+       padding: 50px;
+       height: 180px;
+       font-size: 1.4em; 
+       font-weight: 200;
+    }
+    .home-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+
+    .venue-row
+    {
+        height: 600px;
+        background-color: #fca311;
+        color: white;
+    }
+    .venue-row .venue-header
+    {
+        font-size: 2.8em;
+        font-weight: 600;
+        padding: 15px;
+    }
+
+    .venue-row .venue-p {
+        padding: 30px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+    .venue-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+    
+    .events-row
+    {
+        height: 600px;
+    }
+
+    .events-row .events-header
+    {
+        padding-top: 50px;
+        font-size: 2.8em;
+        font-weight: 600;
+    }
+.events-row .events-p
+{
+    padding-top: 50px;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px ) 
+{
+
+    .index-0
+    {
+        height: 50vh;
+        background-color: #fca311;
+        color: #fff;
+        margin-top: -20px;
+    }
+
+    .index-0 .index-par
+    {
+        padding-left: 60px;
+        padding-top: 160px;
+        font-size: 2.2em;
+        font-weight: 400;
+    }
+
+    .index-0 .div-btn
+    {
+        padding-left: 40px;
+    }
+    .home-row
+    {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .home-row .home-row-header
+    {
+       font-size: 2.4em; 
+       font-weight: 600;
+    }
+
+    .home-row .home-row-p
+    {
+       padding-top: 30px; 
+       padding: 50px;
+       height: 180px;
+       font-size: 1.4em; 
+       font-weight: 200;
+    }
+    .home-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+    .venue-row
+    {
+        height: 600px;
+        background-color: #fca311;
+        color: white;
+    }
+    .venue-row .venue-header
+    {
+        font-size: 2.4em;
+        font-weight: 600;
+        padding: 15px;
+    }
+
+    .venue-row .venue-p {
+        padding: 30px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+    .venue-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+    
+    .events-row
+    {
+        height: 600px;
+    }
+
+    .events-row .events-header
+    {
+        padding-top: 50px;
+        font-size: 2.4em;
+        font-weight: 600;
+    }
+    .events-row .events-p
+    {
+        padding-top: 50px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px ) 
+{
+    .index-0
+    {
+        height: 50vh;
+        background-color: #fca311;
+        color: #fff;
+        margin-top: -20px;
+    }
+
+    .index-0 .index-par
+    {
+        padding-left: 60px;
+        padding-top: 160px;
+        font-size: 2.8em;
+        font-weight: 800;
+    }
+
+    .index-0 .div-btn
+    {
+        margin-left: -120px;
+    }
+    .home-row
+    {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .home-row .home-row-header
+    {
+       font-size: 3.4em; 
+       font-weight: 600;
+    }
+
+    .home-row .home-row-p
+    {
+       padding-top: 30px; 
+       padding: 50px;
+       height: 180px;
+       font-size: 1.8em; 
+       font-weight: 200;
+    }
+    .home-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+        margin-left: 50px;
+    }
+    .venue-row
+    {
+        height: 600px;
+        background-color: #fca311;
+        color: white;
+    }
+    .venue-row .venue-header
+    {
+        font-size: 3.4em;
+        font-weight: 600;
+        padding: 15px;
+    }
+
+    .venue-row .venue-p {
+        padding: 30px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+    .venue-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+    
+    .events-row
+    {
+        height: 600px;
+    }
+
+    .events-row .events-header
+    {
+        padding-top: 50px;
+        font-size: 3.4em;
+        font-weight: 600;
+    }
+    .events-row .events-p
+    {
+        padding-top: 50px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px ) 
+{
+
+    .index-0
+    {
+        height: 50vh;
+        background-color: #fca311;
+        color: #fff;
+        margin-top: -20px;
+    }
+
+    .index-0 .index-par
+    {
+        padding-left: 80px;
+        padding-top: 160px;
+        font-size: 3.2em;
+        font-weight: 800;
+    }
+
+    .index-0 .div-btn
+    {
+        margin-left: 40px;
+    }
+    .home-row
+    {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .home-row .home-row-header
+    {
+       font-size: 3.4em; 
+       font-weight: 600;
+    }
+
+    .home-row .home-row-p
+    {
+       padding-top: 30px; 
+       padding: 50px;
+       height: 180px;
+       font-size: 1.8em; 
+       font-weight: 200;
+    }
+    .home-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+        margin-left: 50px;
+    }
+    .venue-row
+    {
+        height: 600px;
+        background-color: #fca311;
+        color: white;
+    }
+    .venue-row .venue-header
+    {
+        font-size: 3.4em;
+        font-weight: 600;
+        padding: 15px;
+    }
+
+    .venue-row .venue-p {
+        padding: 30px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+    .venue-row .venue-room
+    {
+        height: 300px;
+        padding-top: 40px;
+    }
+    
+    .events-row
+    {
+        height: 400px;
+    }
+
+    .events-row .events-header
+    {
+        padding-top: 50px;
+        font-size: 3.4em;
+        font-weight: 600;
+    }
+    .events-row .events-p
+    {
+        padding-top: 50px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
+
+}
+
 .sidebar
 {
     padding: 15px;
@@ -11,104 +392,4 @@
 .main-wrapper
 {
     margin-left: 50px;
-}
-
-.index-0
-{
-    height: 500px;
-    background-image: url('room_interior.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.index-0 h1
-{
-    padding-left: 180px;
-    padding-top: 120px;
-    font-size: 3.8em;
-    font-weight: 600;
-}
-
-.index-0 p
-{
-    padding-left: 180px;
-    padding-top: 50px;
-    font-size: 2.2em;
-    font-weight: 400;
-}
-
-.venue-row
-{
-    height: 500px;
-    background-color: rgba(173,111,39,0.73);
-    color: white;
-}
-.venue-row h1
-{
-    font-size: 3.2em;
-}
-
-.venue-row p {
-    padding-top: 30px;
-    font-size: 2.8em;
-}
-
-.venue-row .venue-room
-{
-    height: 300px;
-    padding-top: 60px;
-}
-
-.home-row
-{
-    height: auto;
-    padding-top: 50px;
-}
-.home-row h2
-{
-   font-size: 3.2em; 
-}
-.home-row p
-{
-   padding-top: 30px; 
-   height: 180px;
-}
-.home-row .img-venue-1
-{
-    background-image: url("lp_birth.jpeg");
-    height: 300px;
-    border-radius: 15px;
-    padding-top: 30px; 
-    margin-right: 10px;
-    margin-left: 30px;
-}
-.home-row .img-venue-3
-{
-    background-image: url("anc.jpg");
-    height: 180px;
-    border-radius: 15px;
-   padding-top: 30px; 
-    margin-right: 10px;
-}
-.home-row .img-venue-4
-{
-    background-image: url("anc_9.jpg");
-    height: 300px;
-    border-radius: 15px;
-   padding-top: 30px; 
-}
-
-.events-row
-{
-    height: 500px;
-}
-
-.events-row h2
-{
-    padding-top: 50px;
-    font-size: 3.2em;
-}
-.events-row p
-{
-    padding-top: 50px;
 }
