@@ -1,13 +1,17 @@
+<% if current_user.admin? %>             
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
             <%= render 'site/sidebar' %> 
         </div>
         <div class="col-sm-9 col-md-8 col-lg-8 main-wrapper">
-            <h1 class="page-header">Daily Visitors</h1>
-            <% if current_user.admin? %>             
-                <%= line_chart @visits.group_by_day(:started_at).count %>
-            <% end %>
+            <div class="row">
+                    <%= line_chart @visits.group_by_day(:started_at).count %>
+            </div>
+            <div class="row">
+                    <%= pie_chart @visits.group(:device).count, donut: true %>
+            </div>
         </div>
     </div>
 </div>
+<% end %>
