@@ -17,14 +17,16 @@
                         <th>Check-out</th>
                         <th>Adults</th>
                         <th>Children</th>
+                        <th>Price</th>
                     </tr>
                     <% @bookings.each do |booking| %>
                         <tr>
-                            <td><%= link_to booking.room.room_name, booking.room %></td>
+                            <td><%= link_to "User here", "#" %></td>
                             <td><%= Account.find(booking.account_id).name %>&nbsp;&nbsp;<%= Account.find(booking.account_id).surname %></td>
                             <td><%= booking.checkin_day%></td>
                             <td><%= booking.checkout_day%></td>
                             <td><%= booking.adults%></td>
+                            <td><%= booking.children%></td>
                             <td><%= booking.children%></td>
                         </tr>
                     <% end %>

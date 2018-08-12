@@ -12,6 +12,8 @@
   <body>
       <%= render 'layouts/header' %>
     <%= yield %>
+    <% if !current_page?(dashboard_url) %>
       <%= render 'layouts/footer' %>
+  <% end %>
   </body>
 </html>
