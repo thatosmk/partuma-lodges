@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # associations
   has_one  :account
   has_many :bookings
+  has_many :posts
 
 
   # associate avatars with the model
