@@ -1,14 +1,13 @@
 // This scss file manages the Rooms views
-.rooms-img-row
+
+.wrapper-row
 {
-    background-image: url("mattress_small.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color:#b8860b;
+    color: #fff;
     height: 400px;
     border-radius: 5px;
 }
-
-.rooms-img-row .rooms-header
+.wrapper-row .rooms-header
 {
     color: #fff;
     font-size: 5.0em;

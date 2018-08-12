@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   get 'avatar/create'
   get 'avatar/update'
   get 'avatar/destroy'

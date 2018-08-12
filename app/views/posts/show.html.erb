@@ -1,0 +1,29 @@
+<div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="row"><h1 class="page-header"><%= @post.title%></h1> </div>
+
+    <div class="row">
+        <p class="lead"><%= @post.caption %></p>     
+    </div>
+    <div class="row">
+        <h1 class="page-header text-muted">Pictures from the event</h1>
+        <% @post.images.each do |img|%>    
+            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-4">
+                <%= image_tag(img, height: 400, width: 400, class: "thumbnail")%> 
+            </div>
+        <% end %>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+    <% if user_signed_in? && current_user.admin? %>
+    <div class="row">
+        <h1 class="page-header text-muted">Post Settings</h1>
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Back', posts_path %>
+    </div>
+    <% end %>
+</div>
+
+
+

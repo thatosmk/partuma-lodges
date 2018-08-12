@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-md-2 col-lg-2 sidebar">
+            <%= render 'site/sidebar' %> 
+        </div>
+        <div class="col-sm-3 col-md-8 col-lg-8">
+            <p id="notice"><%= notice %></p>
+            <div class="row">
+                <%= link_to 'Create Event', new_event_path, class: "btn btn-success btn-lg" %>
+            </div>
+            <div class="row">
+                <h2 class="page-header"><%= pluralize(@events.count, 'Event')%></h2>
+                <% @events.each do |event| %>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <h3 class="text-info"><%= link_to event.name, event %></h3>
+                            <p class="lead"><%= event.description %></p>
+                            <p class="lead"><%= event.event_date %>, at <%= event.event_time %></p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

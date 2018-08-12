@@ -1,30 +1,3 @@
-<% if user_signed_in? && current_user.admin? %>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-9 col-md-2 col-lg-2 sidebar">
-            <%= render 'site/sidebar' %> 
-        </div>
-        <div class="col-sm-3 col-md-8 col-lg-8">
-            <p id="notice"><%= notice %></p>
-            <div class="row">
-                <%= link_to 'Create Event', new_event_path, class: "btn btn-success btn-lg" %>
-            </div>
-            <div class="row">
-                <h2 class="page-header"><%= pluralize(@events.count, 'Event')%></h2>
-                <% @events.each do |event| %>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <h3 class="text-info"><%= link_to event.name, event %></h3>
-                            <p class="lead"><%= event.description %></p>
-                            <p class="lead"><%= event.event_date %>, at <%= event.event_time %></p>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
-<% else %>
 <div class="container">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="row">
@@ -41,18 +14,34 @@
                             <%= image_tag("sax_event.jpeg", class: "media-object", alt: "", height: 150)%>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading"><%= event.name %></h4><br />
-                            <p class="text-muted"><%= event.description %></p><br/>
+                            <h4 class="media-heading"><%= event.name %></h4>
+                            <p class="text-muted"><%= event.description %></p>
                             <strong>when: </strong>
                             <p class="text-info"><%= event.event_date %>, at <%= event.event_time %></p>
+                            <%= link_to "Interested", "#", class: "btn btn-default btn-lg"%>
                         </div>
                     </div>
                 </div>
                 <% end %>
             </div>
             <div class="row">
-                <h1 class="page-header text-info">Previous Events</h1>
+                <h1 class="page-header text-muted">Previous Events</h1>
+                <% @posts.each do |post|%>
+                <div class="row media-events-row">
+                    <div class="media">
+                        <div class="media-left">
+                            <%= image_tag("sax_event.jpeg", class: "media-object", alt: "", height: 150)%>
+                        </div>
+                        <div class="media-body">
+                                <h1 class="media-heading"><%= post.title %></h1>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <%= link_to "View", post, class: "btn btn-default btn-lg"%>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
             </div>
         </div>
 </div>
-<% end %>

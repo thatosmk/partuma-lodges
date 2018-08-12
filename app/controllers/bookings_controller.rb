@@ -32,6 +32,11 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
+          # update booked for rooms
+          @booked = @room.booked
+          @room.update_attributes(:booked, @booked+1)
+
+          # send an email
         format.html { redirect_to rooms_url, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else

@@ -1,0 +1,46 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_field :title, class: "form-control", placeholder: "Event title" %>
+        <br>
+        <br>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= form.text_area :caption, class: "form-control", placeholder: "Event details", rows: 10 %>
+        <br/><br/>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-3">
+            <%= form.label :upload_images %> 
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-3">
+            <%= form.file_field :images, multiple: true %> 
+        <br/><br/>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+            <%= form.submit "Create Event", class: "btn btn-success btn-block" %>
+      </div>
+  </div>
+<% end %>

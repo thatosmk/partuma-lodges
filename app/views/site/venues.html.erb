@@ -1,17 +1,12 @@
 <div class="container">
     <p id="notice"><%= notice %></p>
     <div class="row">
-        <div class="rooms-img-row">
+        <div class="wrapper-row">
             <h1 class="rooms-header">Book one of our Venues</h1>
         </div>
     </div>
-    <% if user_signed_in? && current_user.admin? %>
-        <div class="row">
-            <br /><br />
-            <%= link_to "Add new room", new_room_path, class: "btn btn-info btn-lg"%>
-        </div>
-    <% end %>
-
+    <br/>
+    <br/>
     <div class="row">
             <br /><br />
         <% @rooms.each do |room| %>
@@ -32,7 +27,13 @@
         <% end %>
     </div>
 
-<div class="row" style="height: 300px;"></div>
+    <% if user_signed_in? && current_user.admin? %>
+        <div class="row">
+            <br /><br />
+            <%= link_to "Add new room", new_room_path, class: "btn btn-info btn-lg"%>
+        </div>
+    <% end %>
+    <div class="row" style="height: 300px;"></div>
 </div>
 <script>
  $(function() {
