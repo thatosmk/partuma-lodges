@@ -1,32 +1,27 @@
 <% if current_user.admin? %>             
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2 sidebar hidden-xs">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar hidden-xs">
             <%= render 'site/sidebar' %> 
         </div>
         <div class="col-sm-8 col-md-8 col-lg-8 main-wrapper hidden-xs">
             <div class="row">
                 <h1 class="page-header">Overview</h1>
                 <div class="row">
-                    <div class="col-sm-3 col-md-4">
+                    <div class="col-sm-3 col-md-3 col-lg-offset-1 col-lg-2">
                     <%= pie_chart @visits.group(:device).count, donut: true, legend: "bottom", title: "Rooms Booked" %> 
                     </div>
-                    <div class="col-sm-3 col-md-4">
+                    <div class="col-sm-3 col-md-3 col-lg-offset-1 col-lg-2">
                     <%= pie_chart @visits.group(:device).count, donut: true, legend: "bottom", title: "Venues Booked" %> 
                     </div>
-                    <div class="col-sm-4 col-md-4">
+                    <div class="col-sm-4 col-md-3 col-lg-offset-1 col-lg-2">
                     <%= pie_chart @visits.group(:device).count, donut: true, legend: "bottom", title: "Popular Customers by Place" %> 
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row hidden-sm">
                 <h1 class="page-header text-muted">Daily Visitors</h1>
                     <%= line_chart @visits.group_by_day(:started_at).count,colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People"  %>
-                    <br/><br/>
-            </div>
-            <div class="row">
-                <h1 class="page-header text-muted">Daily Visitors by Device Type</h1>
-                <%= pie_chart @visits.group(:device).count %> 
             </div>
         </div>
     </div>

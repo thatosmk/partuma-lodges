@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$brand-color: #d0980c;
 
 /* Small devices (tablets, 425px and down) */
 @media (max-width: 425px ) 
@@ -9,7 +10,7 @@
     .index-0
     {
         height: 70vh;
-        background-color:#b8860b;
+        background-color:$brand-color;
         color: #fff;
         margin-top: -20px;
     }
@@ -56,7 +57,7 @@
     .venue-row
     {
         height: 600px;
-        background-color: #fca311;
+        background-color: $brand-color;
         color: white;
     }
     .venue-row .venue-header
@@ -105,7 +106,7 @@
     .index-0
     {
         height: 60vh;
-        background-color:#b8860b;
+        background-color:$brand-color;
         color: #fff;
         margin-top: -20px;
     }
@@ -150,7 +151,7 @@
     .venue-row
     {
         height: 600px;
-        background-color: #fca311;
+        background-color: $brand-color;
         color: white;
     }
     .venue-row .venue-header
@@ -198,7 +199,7 @@
     .index-0
     {
         height: 60vh;
-        background-color:#b8860b;
+        background-color:$brand-color;
         color: #fff;
         margin-top: -20px;
     }
@@ -244,7 +245,7 @@
     .venue-row
     {
         height: 600px;
-        background-color: #fca311;
+        background-color: $brand-color;
         color: white;
     }
     .venue-row .venue-header
@@ -294,7 +295,7 @@
     .index-0
     {
         height: 60vh;
-        background-color:#b8860b;
+        background-color:$brand-color;
         color: #fff;
         margin-top: -20px;
     }
@@ -340,7 +341,7 @@
     .venue-row
     {
         height: 600px;
-        background-color: #fca311;
+        background-color: $brand-color;
         color: white;
     }
     .venue-row .venue-header
@@ -385,10 +386,37 @@
 
 .sidebar
 {
-    padding: 15px;
-    margin-left: 50px;
+    background-color: $brand-color;
+    height: 100vh;
+    color: #fff;
+    margin-top: -20px;
+    position: relative;
 }
 
+.sidebar .nav li 
+{
+    padding: 15px;
+}
+.sidebar .nav li a
+{
+    color: #fff;
+    font-size: 1.4em;
+    padding: 10px;
+}
+
+.sidebar ul li a:hover
+{
+    color: $brand-color;
+    background-color: #fff;
+}
+
+.sidebar p
+{
+    color: white;
+    font-size: 1.8em;
+    padding-top: 50px;
+    padding-left: 50px;
+}
 .main-wrapper
 {
     margin-left: 50px;
