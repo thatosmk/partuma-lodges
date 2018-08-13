@@ -13,6 +13,7 @@ class SiteController < ApplicationController
 
   def dashboard
     @visits = Ahoy::Visit.all
+    @users  = User.all
   end
 
   def contact
