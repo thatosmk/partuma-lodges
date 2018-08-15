@@ -27,7 +27,10 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
-    @room.images.attach(params[:room][:images])
+    if params[:room][:images]
+        @room.images.attach(params[:room][:images])
+    end
+
 
     respond_to do |format|
       if @room.save
@@ -43,7 +46,9 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update
-    @room.images.attach(params[:room][:images])
+    if params[:room][:images]
+        @room.images.attach(params[:room][:images])
+    end
     respond_to do |format|
       if @room.update(room_params)
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }

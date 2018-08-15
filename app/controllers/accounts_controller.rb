@@ -50,7 +50,7 @@ class AccountsController < ApplicationController
           if(params[:account][:avatar])
             current_user.avatar.attach(params[:account][:avatar])
           end
-        format.html { redirect_to @account, notice: 'Account was successfully updated.' }
+        format.html { redirect_to profile_url, notice: 'Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @account }
       else
         format.html { render :edit }

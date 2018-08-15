@@ -1,25 +1,30 @@
 <div class="container">
     <div class="row">
-        <h1 class="page-header">Hello, <%= @user.account.name %></h1>
-    </div>
-    
-    <% if !@user.avatar.attached? %>
-    <div class="row">
-        <h3 class="text-muted">Add Profile Picture</h3>
-        
-        <%= link_to "Add Profile Picture", edit_account_path(@user.account.id), class: "btn btn-primary btn-lg" %>
-    </div>
-    <% else %>
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <% if !@user.avatar.attached? %>
+                <div class="row">
+                    <h3 class="text-muted">Add Profile Picture</h3>
+                    
+                    <%= link_to "Add Profile Picture", avatar_create_path, class: "btn btn-default btn-lg" %>
+                </div>
+            <% else %>
+                <div class="row">
+                    <%= image_tag(current_user.avatar, class: "img-circle-profile") %>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="text-muted">Settings</h3>
+                    <%= link_to "Change Profile Picture", avatar_create_path, class: "btn btn-default btn-lg" %>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="col-sm-5 col-md-5 col-lg-5 ">
+            <div class="row"> <h1 class="page-header">Hello, <%= @user.account.name %></h1>
+            </div>
+        </div>
+    </div>     
      
-    <div class="row">
-        <%= image_tag(current_user.avatar, class: "img-circle-profile") %>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3 class="text-muted">Change Profile Picture</h3>
-        <%= link_to "Add Profile Picture", avatar_create_path, class: "btn btn-primary btn-lg" %>
-    </div>
-    <% end %>
     <div class="row" style="height: 300px;"></div>
 </div>

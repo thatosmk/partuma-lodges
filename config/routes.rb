@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/users', to: "site#users", as: '/users'
   get '/room-bookings', to: "site#room_bookings", as: '/bookings'
   get '/venues', to: "site#venues", as: '/venues'
+  get '/change_profile_picture', to: "site#add_profile_picture", as: '/change_profile_picture'
 
   # serve user management
   devise_for :users , controllers: { registrations: "registrations" }

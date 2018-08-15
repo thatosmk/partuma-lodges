@@ -24,11 +24,10 @@
                         <li><%= link_to "Profile",profile_url, class: ""%></li>
                         <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
 					<% else %>
-                        <li><a href="/events">Jazz</a></li>
-                        <li><a href="/venues">Plan your Event</a></li>
-                        <li><a href="/rooms">Bookings</a></li>
-						<li class=""><%= link_to "LOGIN", new_user_session_path%></li>
-						<li><%= link_to "SIGN UP",new_user_registration_path, class:"active"%></li>
+                        <li><a href="/events">Home</a></li>
+                        <li><a href="/events">Our Events</a></li>
+                        <li><a href="/venues">Our Venues</a></li>
+                        <li><a href="/rooms" class="active">Book Now</a></li>
 					<% end %>
 				</ul>
 		</div><!-- /.navbar-collapse -->

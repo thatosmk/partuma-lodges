@@ -1,5 +1,9 @@
 class SiteController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard, :profile, :users, :bookings]
+  before_action :authenticate_user!, only: [:dashboard, :profile, :users, :bookings, :add_profile_picture]
+
+  def add_profile_picture
+    @account = Account.find(params[:account_id])
+  end
 
   def room_bookings
     @bookings = Booking.all

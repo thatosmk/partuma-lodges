@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
       if @booking.save
           # update booked for rooms
           @booked = @room.booked
-          @room.update_attributes(:booked, @booked+1)
+          @room.update_attributes(booked: @booked+1)
 
           # send an email
         format.html { redirect_to rooms_url, notice: 'Booking was successfully created.' }
@@ -78,7 +78,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:account_id, :adults, :children, :room_id, :user_id, :checkin_day, :checkout_day)
+      params.require(:booking).permit(:account_id, :adults, :children, :room_id, :user_id, :checkin_day, :checkout_day, :number_of_rooms)
     end
 
     def set_room

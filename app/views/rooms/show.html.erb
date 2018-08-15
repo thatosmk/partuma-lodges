@@ -4,12 +4,14 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-7 col-lg-7">
+        <% if @room.images.attached? %>
                 <%= image_tag(@room.images.last, class: "img-thumbnail img-preview")%><br />
+        <% end %>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-5 room-book-details">
             <% if @room.room_type == "accommodation"%>
                 <div class="row">
-                    <p class="lead text-center">R <%= @room.price %> per night</p>
+                    <h3 class="text-muted text-center">R <%= @room.price %> per night</h3>
                 </div>
                 <div class="row booking-form">
                     <%= render 'bookings/form', room: @room %>
@@ -41,7 +43,7 @@
         <h2 class="page-header">Amenities</h2>
         <div class="col-sm-3 col-md-3 col-lg-3">
             <ul class="list-group">
-            <% @room.amenities.split("\n").each do |an|%>
+            <% @room.amenities.split(",").each do |an|%>
                 <li class=""><%= an %></li>
                 <br/>
             <% end %>
