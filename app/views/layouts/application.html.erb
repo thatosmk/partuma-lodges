@@ -10,9 +10,7 @@
   </head>
 
   <body>
-      <% if !current_page?(dashboard_url)%>
-          <%= render 'layouts/header' %>
-      <% end %>
+      <%= render 'layouts/header' %>
 
     <%= yield %>
 

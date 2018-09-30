@@ -1,0 +1,8 @@
+<div class="nav">
+    <ul class="nav nav-tabs">
+        <li class="<%= current_page?(dashboard_path) ? 'active': ''%>"><%= link_to "Dashboard", dashboard_path %></li>
+        <li  class="<%= current_page?(bookings_path) ? 'active': ''%>"role="presentation"><%= link_to "Bookings", bookings_path %></li>
+        <li  class="<%= current_page?(blog_path) ? 'active': ''%>"role="presentation"><%= link_to "Blog", blog_path %></li>
+        <li  class="<%= current_page?(support_path) ? 'active': ''%>"role="presentation"><%= link_to "Support", support_path %></li>
+    </ul>
+</div>

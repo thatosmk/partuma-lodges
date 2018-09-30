@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $brand-color: #d0980c;
+$padding-left: 150px;
 
 /* Small devices (tablets, 425px and down) */
 @media (max-width: 425px ) 
@@ -103,6 +104,12 @@ $brand-color: #d0980c;
 @media (min-width: 768px ) 
 {
 
+    .main-dashboard
+    {
+        position: relative;
+        padding-left: $padding-left;
+    }
+
     .index-0
     {
         height: 60vh;
@@ -196,6 +203,11 @@ $brand-color: #d0980c;
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px ) 
 {
+    .main-dashboard
+    {
+        position: relative;
+        padding-left: $padding-left;
+    }
     .index-0
     {
         height: 60vh;
@@ -292,6 +304,11 @@ $brand-color: #d0980c;
 @media (min-width: 1200px ) 
 {
 
+    .main-dashboard
+    {
+        position: relative;
+        padding-left: $padding-left;
+    }
     .index-0
     {
         height: 60vh;

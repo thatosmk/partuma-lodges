@@ -9,6 +9,10 @@ class SiteController < ApplicationController
     @bookings = Booking.all
   end
 
+  def blog
+    @posts = Post.all
+  end
+
   def index
   end
 
