@@ -5,7 +5,12 @@
             <%= render "topbar"%>
         </div>
         <div class="row">
-                <%= line_chart @visits.group_by_day(:started_at).count,colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Daily Visitors"  %>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <%= pie_chart @visits.group(:device_type).count, donut: true,title: "People Visiting partuma.co.za" %>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <%= line_chart @visits.group_by_day(:started_at).count,colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors"  %>
+            </div>
         </div>
         <div class="row hidden-sm">
             <h1 class="text-muted page-header">Total Sign ups</h1>
