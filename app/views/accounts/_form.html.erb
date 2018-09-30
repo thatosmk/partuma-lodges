@@ -29,6 +29,7 @@
       <div class="col-md-4 col-lg-4">
             <%= form.label :address %>
             <%= form.text_area :address, class: "form-control", rows: 12 %>
+          <br/><br/>
       </div>
       <div class="col-md-4 col-lg-4">
             <%= form.label :cell_number %>
@@ -40,11 +41,12 @@
 
   <div class="row">
       <div class="col-md-4 col-lg-4">
-        <%= form.label :dob %>
+        <%= form.label :date_of_birth %>
         <%= form.date_select :dob %>
       </div>
   
       <div class="col-md-4 col-lg-4">
+        <%= form.label :choose_profile_picture %>
         <%= form.file_field :avatar %> 
       </div>
   </div>

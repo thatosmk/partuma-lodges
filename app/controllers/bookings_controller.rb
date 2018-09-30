@@ -36,7 +36,10 @@ class BookingsController < ApplicationController
           @booked = @room.booked
           @room.update_attributes(booked: @booked+1)
 
-          # send an email
+          # send an email to both Customer and Partuma
+          BookingMailer.with(user: current_user).booking_confirmation_email.deliver_now
+          BookingMailer.with(user: current_user).received_booking_email.deliver_now
+
         format.html { redirect_to rooms_url, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
