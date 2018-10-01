@@ -33,10 +33,11 @@
                     <th>Date</th>
                     <th>user id</th>
                     <th>IP</th>
-                    <th>user agent</th>
                     <th>referring_domain</th>
+                    <th>browser</th>
                     <th>device_type</th>
                     <th>city</th>
+                    <th>Country</th>
                 </tr>
                 <% @visits.each do |user|%>
                     <tr>
@@ -44,10 +45,11 @@
                         <td><%= link_to user.user_id, "#"%></td>
                         <td><%= user.started_at.strftime("%d, %B, %H:%M %P")%></td>
                         <td><%= user.ip%></td>
-                        <td><%= user.user_agent%></td>
                         <td><%= user.referring_domain %></td>
+                        <td><%= user.browser%></td>
                         <td><%= user.device_type %></td>
                         <td><%= user.city %></td>
+                        <td><%= user.country %></td>
                     </tr>
                 <% end %>
             </table>
