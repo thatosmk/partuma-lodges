@@ -35,6 +35,10 @@ class SiteController < ApplicationController
     @users = User.all
   end
 
+  def admin
+
+  end
+
   def venues
     @rooms = Room.where(room_type: "venues").all
   end

@@ -6,6 +6,8 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    @users = User.all
+    @visits  = Ahoy::Visit.all.paginate(:page => params[:page], per_page: 10 )
   end
 
   # GET /accounts/1

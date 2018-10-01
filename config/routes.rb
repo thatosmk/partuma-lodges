@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/room-bookings', to: "site#room_bookings", as: '/bookings'
   get '/venues', to: "site#venues", as: '/venues'
   get '/blog', to: "site#blog", as: '/blog'
+  get '/admin', to: "site#admin", as: '/admin'
   get '/support', to: "site#support", as: '/support'
   get '/change_profile_picture', to: "site#add_profile_picture", as: '/change_profile_picture'
 
