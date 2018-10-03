@@ -10,12 +10,14 @@
   </head>
 
   <body>
+    <% if !current_page?(root_url) %>
       <%= render 'layouts/header' %>
 
     <%= yield %>
 
-    <% if !current_page?(dashboard_url) %>
       <%= render 'layouts/footer' %>
+  <% else %>
+    <%= yield %>
   <% end %>
   </body>
 </html>

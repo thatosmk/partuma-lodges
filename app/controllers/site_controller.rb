@@ -1,6 +1,8 @@
 class SiteController < ApplicationController
   before_action :authenticate_user!, only: [:dashboard, :profile, :users, :bookings, :add_profile_picture]
 
+  def maintain
+  end
   def add_profile_picture
     @account = Account.find(params[:account_id])
   end
