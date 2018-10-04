@@ -21,7 +21,30 @@
         </div>
 
         <div class="col-sm-5 col-md-5 col-lg-5 ">
-            <div class="row"> <h1 class="page-header">Hello, <%= @user.account.name %></h1>
+            <div class="row"> 
+                <h1 class="page-header">Hello, <%= @user.account.name %></h1>
+            </div>
+            <div class="row"> 
+                <div class="col-sm-2 col-md-2 col-lg-2 text-muted"> 
+                    <p>Name:</p>
+                    <p>Surname:</p>
+                    <p>DOB:</p>
+                    <p>email:</p>
+                    <p>address:</p>
+                    <p>cel:</p>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3"> 
+                    <p><%= @user.account.name%></p>
+                    <p><%= @user.account.surname%></p>
+                    <p><%= @user.account.dob%></p>
+                    <p><%= @user.email%></p>
+                    <% if @user.account.address.nil?%>
+                        <p class="text-muted"><%= link_to "add address", edit_account_path(@user.account)%></p>
+                    <% else %>
+                        <p><%= @user.account.address%></p>
+                    <% end %>
+                    <p><%= @user.account.cel%></p>
+                </div>
             </div>
         </div>
     </div>     
