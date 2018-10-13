@@ -81,4 +81,4 @@ node_modules/
 # Ignore application configuration
 /config/application.yml
 cert_bundle.crt
-cert_bundle.key
+DEADJOE

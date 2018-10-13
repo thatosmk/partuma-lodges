@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/venues', to: "site#venues", as: '/venues'
   get '/blog', to: "site#blog", as: '/blog'
   get '/admin', to: "site#admin", as: '/admin'
+  get '/maintain', to: "site#maintain", as: '/maintain'
   get '/support', to: "site#support", as: '/support'
   get '/change_profile_picture', to: "site#add_profile_picture", as: '/change_profile_picture'
 
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   resources :accounts
 
   # setup root page
-  #root to: "site#index"
-  root to: "site#maintain"
+  root to: "site#index"
+  #root to: "site#maintain"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

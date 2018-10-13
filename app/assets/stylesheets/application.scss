@@ -23,7 +23,7 @@
 $brand-color: #d0980c;
 $brand-footer-color: #515151;
 
-@media (min-width: 788px ) 
+@media (min-width: 768px ) 
 {
 
     .nav .navbar-brand
@@ -61,7 +61,94 @@ $brand-footer-color: #515151;
         border-radius: 5px;
     }
 
+    .footer
+    {
+        background-color: $brand-footer-color;
+        color: #fff;
+        height: 400px;
+        padding: 20px;
+        margin-bottom: 0px;
+    }
+
+    .footer .footer-heading
+    {
+        font-size: 2.0em;
+        font-weight: 300;
+    }
+    .footer .text-white
+    {
+        color: #fff;
+    }
+    .footer .fa
+    {
+        color: #fff;
+        padding-right: 10px;
+    }
 }
+
+/* Small devices (tablets, 425px and down) */
+@media (max-width: 425px ) 
+{
+    .nav .navbar-brand
+    {
+        font-size: 1.4em;
+        font-weight: 600;
+        color: $brand-color;
+        margin-left: 10px;
+    
+    }
+
+    .navbar
+    {
+        height: 100px;
+        background-color: #fff;
+        border: none;
+    }
+
+    .navbar .navbar-nav li
+    {
+        padding: 5px;
+        font-size: 1.2em;
+    }
+
+    .navbar .navbar-nav li a:hover
+    {
+        text-decoration: none;
+        color: #777;
+    }
+
+    .navbar .navbar-nav li .active
+    {
+        background-color: $brand-color;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .footer
+    {
+        background-color: $brand-footer-color;
+        color: #fff;
+        height: 600px;
+        padding: 20px;
+        margin-bottom: 0px;
+    }
+
+    .footer .footer-heading
+    {
+        font-size: 2.0em;
+        font-weight: 300;
+    }
+    .footer .text-white
+    {
+        color: #fff;
+    }
+    .footer .fa
+    {
+        color: #fff;
+        padding-right: 10px;
+    }
+}
+
 /*
  *
  * Events views style contents 
@@ -102,61 +189,3 @@ $brand-footer-color: #515151;
     font-size: 2.0em;
 }
 
-/*
- *
- * Footer style contents 
- *
- */
-/* Small devices (tablets, 425px and down) */
-@media (max-width: 425px ) 
-{
-.footer
-{
-    background-color: $brand-footer-color;
-    color: #fff;
-    height: 600px;
-    padding: 20px;
-    margin-bottom: 0px;
-}
-
-.footer .footer-heading
-{
-    font-size: 2.0em;
-    font-weight: 300;
-}
-.footer .text-white
-{
-    color: #fff;
-}
-.footer .fa
-{
-    color: #fff;
-    padding-right: 10px;
-}
-}
-@media (min-width: 768px ) 
-{
-.footer
-{
-    background-color: $brand-footer-color;
-    color: #fff;
-    height: 400px;
-    padding: 20px;
-    margin-bottom: 0px;
-}
-
-.footer .footer-heading
-{
-    font-size: 2.0em;
-    font-weight: 300;
-}
-.footer .text-white
-{
-    color: #fff;
-}
-.footer .fa
-{
-    color: #fff;
-    padding-right: 10px;
-}
-}
