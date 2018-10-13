@@ -16,6 +16,7 @@
                     <th>Last sign in date</th>
                 </tr>
                 <% @users.each do |user|%>
+                    <% if !user.account.nil? %>
                     <tr>
                         <td><%= link_to user.id, "#"%></td>
                         <td><%= user.account.name%></td>
@@ -24,6 +25,14 @@
                         <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
                         <td><%= user.last_sign_in_at.strftime("%d, %B, %Y, %H:%M %P")%></td>
                     </tr>
+                <% else %>
+                    <tr>
+                        <td><%= link_to user.id, "#"%></td>
+                        <td><%= user.email%></td>
+                        <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
+                        <td><%= user.last_sign_in_at.strftime("%d, %B, %Y, %H:%M %P")%></td>
+                    </tr>
+                <% end %>
                 <% end %>
             </table>
         </div>
