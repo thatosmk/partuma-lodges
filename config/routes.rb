@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :accounts
 
   # setup root page
-  #root to: "site#index"
-  root to: "site#maintain"
+  root to: "site#index"
+  #root to: "site#maintain"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

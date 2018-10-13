@@ -23,6 +23,7 @@
                     <th>Created Date</th>
                 </tr>
                 <% @users.each do |user|%>
+                    <% if !user.account.nil? %>
                     <tr>
                         <td><%= link_to user.id, "#"%></td>
                         <td><%= user.account.name%></td>
@@ -30,6 +31,16 @@
                         <td><%= user.email%></td>
                         <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
                     </tr>
+                    <% else %>
+                    <tr>
+                        <td><%= link_to user.id, "#"%></td>
+                        <td></td>
+                        <td></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
+                    </tr>
+
+                    <% end %>
                 <% end %>
             </table>
         </div>
