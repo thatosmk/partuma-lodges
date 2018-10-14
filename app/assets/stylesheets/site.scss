@@ -16,16 +16,24 @@ $padding-left: 150px;
 
     .index-0
     {
-        height: 70vh;
-        background-color:$brand-color;
+        height: 80vh;
+        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
         color: #fff;
-        margin-top: -20px;
+        margin-top: -10px;
         position: relative;
     }
 
+    .index-0 .index-header
+    {
+        padding-top: 100px;
+        font-weight: 1000;
+        font-size: 2.4em;
+        letter-spacing: 5px;
+        /*text-transform: uppercase;*/
+    }
     .index-0 .index-par
     {
-        padding-left: 60px;
+        padding-left: 20px;
         padding-top: 120px;
         font-size: 2.2em;
         font-weight: 400;
@@ -33,14 +41,16 @@ $padding-left: 150px;
 
     .index-0 .div-btn
     {
-        padding-left: 60px;
+        padding-left: 10px;
+        padding-top: 80px;
     }
 
     .home-row
     {
         height: auto;
         padding-top: 50px;
-        background-image: url("dancing_music_lg.jpg");
+        height: 600px;
+        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -49,6 +59,8 @@ $padding-left: 150px;
     {
        font-size: 2.8em; 
        font-weight: 600;
+       padding-top: 90px;
+       color: #fff;
     }
 
     .home-row .home-row-p
@@ -65,48 +77,52 @@ $padding-left: 150px;
         padding-top: 40px;
     }
 
+    .home-row .btn-row
+    {
+        padding-top: 200px; 
+    }
+
     .venue-row
     {
-        height: 600px;
-        background-color: $brand-color;
-        color: white;
+        height: auto;
+        padding: 20px;
     }
-    .venue-row .venue-header
+
+    .venue-row h2
     {
-        font-size: 2.8em;
+        font-size: 2.2em;
         font-weight: 600;
-        padding: 15px;
+        padding-top: 50px;
+        text-transform: uppercase;
     }
 
-    .venue-row .venue-p {
-        padding: 30px;
-        font-size: 1.8em;
-        font-weight: 400;
-    }
-
-    .venue-row .venue-room
+    .venue-row p 
     {
-        height: 300px;
-        padding-top: 40px;
+        font-size: 1.8em;
+        padding-top: 80px;
+
     }
     
     .events-row
     {
-        height: 600px;
+        height: 400px;
+        background: linear-gradient(to top, $brand-color, pink);
+        color: #fff;
     }
 
     .events-row .events-header
     {
         padding-top: 50px;
-        font-size: 2.8em;
+        font-size: 2.4em;
         font-weight: 600;
     }
-.events-row .events-p
-{
-    padding-top: 50px;
-    font-size: 1.8em;
-    font-weight: 400;
-}
+    .events-row .events-p
+    {
+        padding-top: 50px;
+        font-size: 1.8em;
+        font-weight: 400;
+    }
+
 }
 
 
@@ -122,52 +138,62 @@ $padding-left: 150px;
 
     .index-0
     {
-        height: 60vh;
-        background-color:$brand-color;
+        height: 100vh;
+        /*background: linear-gradient($brand-color, pink);*/
+        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
         color: #fff;
-        margin-top: -20px;
     }
 
+    .index-0 .index-header
+    {
+        padding-top: 100px;
+        font-weight: 1000;
+        font-size: 4.4em;
+        letter-spacing: 5px;
+    }
     .index-0 .index-par
     {
-        padding-left: 60px;
-        padding-top: 120px;
-        font-size: 2.2em;
-        font-weight: 400;
+        padding-left: 80px;
+        padding-top: 100px;
+        font-size: 3.2em;
+        font-weight: 800;
     }
 
     .index-0 .div-btn
     {
-        padding-left: 60px;
+        margin-left: 20px;
+        padding-top: 80px;
     }
+
+
     .home-row
     {
-        height: auto;
+        height: 900px;
         padding-top: 50px;
+        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .home-row .home-row-header
     {
-       font-size: 2.4em; 
+       font-size: 3.4em; 
        font-weight: 600;
+       vertical-align: middle;
+       color: #fff;
+       padding-top: 150px;
     }
 
-    .home-row .home-row-p
+    .home-row .btn-row
     {
-       padding-top: 30px; 
-       padding: 50px;
-       height: 180px;
-       font-size: 1.4em; 
-       font-weight: 200;
+        padding-top: 100px; 
     }
-    .home-row .venue-room
-    {
-        height: 300px;
-        padding-top: 40px;
-    }
+
     .venue-row
     {
-        height: 600px;
+        height: 500px;
         background-color: $brand-color;
         color: white;
     }
@@ -220,78 +246,89 @@ $padding-left: 150px;
     }
     .index-0
     {
-        height: 60vh;
-        background-color:$brand-color;
+        height: 100vh;
+        /*background: linear-gradient($brand-color, pink);*/
+        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
         color: #fff;
-        margin-top: -20px;
+        margin-top: -10px;
     }
 
+    .index-0 .index-header
+    {
+        padding-top: 100px;
+        font-weight: 1000;
+        font-size: 4.4em;
+        letter-spacing: 5px;
+        /*text-transform: uppercase;*/
+    }
     .index-0 .index-par
     {
-        padding-left: 60px;
+        padding-left: 80px;
         padding-top: 100px;
-        font-size: 2.8em;
+        font-size: 3.2em;
         font-weight: 800;
     }
 
     .index-0 .div-btn
     {
-        margin-left: 0px;
+        padding-top: 80px;
     }
+
     .home-row
     {
-        height: auto;
+        height: 900px;
         padding-top: 50px;
+        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .home-row .home-row-header
     {
-       font-size: 3.4em; 
+       font-size: 3.8em; 
        font-weight: 600;
+       vertical-align: middle;
+       color: #fff;
+       padding-top: 150px;
+    }
+    .home-row .btn-row
+    {
+        padding-top: 100px; 
     }
 
-    .home-row .home-row-p
-    {
-       padding-top: 30px; 
-       padding: 50px;
-       height: 180px;
-       font-size: 1.8em; 
-       font-weight: 200;
-    }
-    .home-row .venue-room
-    {
-        height: 300px;
-        padding-top: 40px;
-        margin-left: 50px;
-    }
     .venue-row
     {
         height: 600px;
-        background-color: $brand-color;
-        color: white;
+        padding: 50px;
     }
-    .venue-row .venue-header
+
+    .venue-row .about-details
     {
-        font-size: 3.4em;
+        padding-left: 50px; 
+    }
+
+    .venue-row h2
+    {
+        font-size: 2.6em;
         font-weight: 600;
-        padding: 15px;
+        text-transform: uppercase;
     }
 
-    .venue-row .venue-p {
-        padding: 30px;
-        font-size: 1.8em;
-        font-weight: 400;
-    }
-
-    .venue-row .venue-room
+    .venue-row p 
     {
-        height: 300px;
+        font-size: 1.8em;
         padding-top: 40px;
+
     }
+
     
     .events-row
     {
-        height: 600px;
+        height: 400px;
+        background: linear-gradient(to top, $brand-color, pink);
+        color: #fff;
     }
 
     .events-row .events-header
@@ -306,7 +343,6 @@ $padding-left: 150px;
         font-size: 1.8em;
         font-weight: 400;
     }
-
 
 }
 

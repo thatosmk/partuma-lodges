@@ -102,8 +102,9 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
     .navbar
     {
         height: 100px;
-        background-color: #fff;
+        background-color: transparent;
         border: none;
+        padding-top: 10px;
     }
 
     .navbar .navbar-nav li
@@ -125,6 +126,11 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
         border-radius: 5px;
     }
 
+    .collapse .navbar-collapse
+    {
+        
+        background-color: $brand-color;
+    }
     .footer
     {
         background-color: $brand-footer-color;
