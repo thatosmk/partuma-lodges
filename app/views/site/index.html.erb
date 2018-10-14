@@ -1,17 +1,26 @@
+<div class="row venue-row">
+    <div class="container">
+        <div class="col-lg-6">
+            <%= image_tag("partuma_front.jpeg", class: "img-thumbnail")%>
+            <br/>
+            <br/>
+            <br/>
+            <%= image_tag("partuma_side.jpeg", class: "img-thumbnail")%>
+        </div>
+        <div class="col-lg-6 about-details">
+            <h2 class="pull-left">Parys & Tumahole</h2>
+            <p class="pull-left">The name Partuma is a combination of two locations (Parys and Tumahole) and it was named so because it is situated in between Parys Town and Tumahole Township.</p>
+            <p class="pull-left"><%= link_to "View Gallery", root_path, class: "btn btn-lg btn-success"%></p>
+        </div>
+    </div>
+</div>
 
 <div class="row home-row">
     <div class="row">
         <h1 class="text-center text-muted home-row-header">Create Unforgettable Memories</h1>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row text-center">
-        <%= link_to "see our next event", events_path, class: "btn btn-default btn-lg"%>&nbsp;&nbsp;
-        <%= link_to "our previous events", blog_path, class: "btn btn-success btn-lg"%>
+    <div class="row btn-row text-center">
+        <%= link_to "Upcoming Events", events_path, class: "btn btn-default btn-lg"%>&nbsp;&nbsp;
+        <%= link_to "Our Previous Events", blog_path, class: "btn btn-success btn-lg"%>
     </div>
 </div>

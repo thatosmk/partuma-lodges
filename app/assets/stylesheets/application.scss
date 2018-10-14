@@ -21,7 +21,8 @@
 @import "rooms";
 
 $brand-color: #d0980c;
-$brand-footer-color: #515151;
+$brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
+
 
 @media (min-width: 768px ) 
 {
@@ -63,7 +64,7 @@ $brand-footer-color: #515151;
 
     .footer
     {
-        background-color: $brand-footer-color;
+        background: $brand-footer-color;
         color: #fff;
         height: 400px;
         padding: 20px;
@@ -127,7 +128,7 @@ $brand-footer-color: #515151;
     .footer
     {
         background-color: $brand-footer-color;
-        color: #fff;
+        color: #515151;
         height: 600px;
         padding: 20px;
         margin-bottom: 0px;

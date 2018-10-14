@@ -10,25 +10,29 @@
   </head>
 
   <body>
-    <% if !current_page?(maintain_url) && current_page?(root_path)%>
-      <%= render 'layouts/header' %>
-<div class="row index-0">
-    <div class="row text-center">
-        <h1 class="index-header">Partuma Lodge</h1>
-        <p class="index-par">Stay with us, or host your event with us.</p>
-    </div>
-    <div class="div-btn text-center">
-        <%= link_to "Learn More", rooms_url, class: "btn btn-success btn-lg"%>
-    </div>
-</div>
+    <% if current_page?(root_path)%>
+        <div class="index-0">
 
-    <%= yield %>
+            <%= render 'layouts/header' %>
 
-      <%= render 'layouts/footer' %>
-  <% else %>
+            <div class="row text-center">
+                <h1 class="index-header">Partuma Lodge</h1>
+                <p class="index-par">Stay with us, or host your event with us.</p>
+            </div>
+
+            <div class="row div-btn text-center">
+                <%= link_to "Book our rooms", rooms_url, class: "btn btn-success btn-lg"%>&nbsp;&nbsp;
+                <%= link_to "Available Venues", rooms_url, class: "btn btn-default btn-lg"%>
+            </div>
+        </div>
+
+        <%= yield %>
+
+        <%= render 'layouts/footer' %>
+    <% else %>
       <%= render 'layouts/header' %>
-    <%= yield %>
+        <%= yield %>
       <%= render 'layouts/footer' %>
-  <% end %>
+    <% end %>
   </body>
 </html>
