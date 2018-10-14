@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'rsvp/new'
+  get 'rsvp/create'
+  get 'rsvp/delete'
+  get 'rsvp/update'
+  get 'rsvp/show'
   resources :posts
   get 'avatar/create'
   get 'avatar/update'

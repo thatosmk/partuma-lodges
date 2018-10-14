@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_031922) do
+ActiveRecord::Schema.define(version: 2018_10_14_124006) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -131,6 +131,13 @@ ActiveRecord::Schema.define(version: 2018_08_15_031922) do
     t.string "room_type", default: "accommodation"
     t.integer "booked", default: 0
     t.integer "quantity", default: 0
+  end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.integer "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "event_id"
   end
 
   create_table "users", force: :cascade do |t|

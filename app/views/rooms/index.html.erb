@@ -35,6 +35,9 @@
                 </div>
                 <div class="row">
                     <%= link_to "Book Room", room, class: "btn btn-danger btn-lg" %>
+                    <% if user_signed_in? && current_user.admin? %>
+                        <%= link_to "Add Pictures", edit_room_path(room), class: "btn btn-warning btn-lg"%>
+                    <% end %>
                 </div>
                 <div class="row">
                 <% if room.images.attached? %>
