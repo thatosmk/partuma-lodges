@@ -14,6 +14,10 @@ $padding-left: 150px;
 @media (max-width: 425px ) 
 {
 
+    .mapouter
+    {
+        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+    }
     .index-0
     {
         height: 80vh;
@@ -129,6 +133,10 @@ $padding-left: 150px;
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px ) 
 {
+    .mapouter
+    {
+        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+    }
 
     .main-dashboard
     {
@@ -349,6 +357,13 @@ $padding-left: 150px;
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px ) 
 {
+
+    .contact
+    {
+        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
     .main-dashboard
     {
