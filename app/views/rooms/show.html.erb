@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-7 col-lg-7">
         <% if @room.images.attached? %>
-                <%= image_tag(@room.images.last, class: "img-thumbnail img-preview")%><br />
+                <%= image_tag(@room.images.last, alt: "partuma lodge jazz club", class: "img-thumbnail img-preview")%><br />
         <% end %>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-5 room-book-details">
@@ -56,7 +56,7 @@
         <div class="row">
             <% @room.images.each do |img|%> 
                 <div class="col-sm-4 col-md-4 col-lg-4">
-                    <%= image_tag(img,  class: "img-div" )%> 
+                    <%= image_tag(img,  class: "img-div", alt: "partuma lodge jazz club" )%> 
                     <br/><br/>
                 </div>
             <% end %>
