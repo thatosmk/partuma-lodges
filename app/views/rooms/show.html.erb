@@ -67,7 +67,9 @@
         <h1 class="page-header page-muted">Make Changes</h1>
         <%= link_to 'Edit Room', edit_room_path(@room), class: "btn btn-primary btn-lg" %> 
         <%= link_to 'Delete Room', room_path(@room), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg"%>
+        <%= link_to "Add Pictures", edit_room_path(@room), class: "btn btn-warning btn-lg"%>
         <% end %>
     </div>
 </div>
-
+<div class="row" style="height: 200px;"></div>
+</div>
