@@ -44,4 +44,5 @@ class SiteController < ApplicationController
   def venues
     @rooms = Room.where(room_type: "venues").all
   end
+
 end
