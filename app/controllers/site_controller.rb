@@ -1,6 +1,9 @@
 class SiteController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard, :profile, :users, :bookings, :add_profile_picture]
+  before_action :authenticate_user!, only: [:dashboard, :profile, :users, :bookings, :add_profile_picture, :support]
 
+  def support
+      @reports = Report.all
+  end
   def maintain
   end
   def add_profile_picture

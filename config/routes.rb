@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :reports, except: [:index]
   get 'rsvp/new'
   get 'rsvp/create'
   get 'rsvp/delete'

@@ -5,11 +5,14 @@
             <%= render "topbar"%>
         </div>
         <div class="row">
-            <h1 class="page-header text-muted">Monthly Reports (Website)</h1>
+
+            <h1 class="page-header text-muted">Monthly Reports (Website)&nbsp;&nbsp;<%= link_to "add report", new_report_path, class: "btn btn-default"%></h1>
+
+            <% @reports.each do |report|%>
             <ul class="list">
-                <li><a href="#">August</a></li>
-                <li><a href="#">September</a></li>
+                <li><%= link_to report.name, report %></li>
             </ul>
+            <% end %>
         </div>
     </div>
 </div>

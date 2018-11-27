@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one  :account, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :posts
+  has_many :reports
   has_many :visits, class_name: "Ahoy::Visit"
 
 
