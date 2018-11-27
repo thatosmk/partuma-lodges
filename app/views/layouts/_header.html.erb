@@ -28,8 +28,6 @@
                     <li><%= link_to "Profile",profile_url%></li>
                     <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "active"%></li>
                 <% else %>
-                    <li><a href="/events">Our Events</a></li>
-                    <li><a href="/venues">Our Venues</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/rooms" class="active">Book Now</a></li>
                 <% end %>
