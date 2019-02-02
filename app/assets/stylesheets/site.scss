@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$brand-color: #d0980c;
+$brand-color: #C48E07;
 $padding-left: 150px;
 
 .btn
@@ -20,112 +20,169 @@ $padding-left: 150px;
     }
     .index-0
     {
-        height: 100vh;
-        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
-        color: #fff;
+        height: 60vh;
         margin-top: -10px;
         position: relative;
     }
 
     .index-0 .index-header
     {
-        padding-top: 80px;
+        padding-top: 20px;
         font-weight: 1000;
-        font-size: 2.6em;
-        letter-spacing: 5px;
+        font-size: 3.3em;
+        letter-spacing: 2px;
         /*text-transform: uppercase;*/
     }
     .index-0 .index-par
     {
         padding-left: 20px;
-        padding-top: 120px;
+        padding-top: 80px;
         font-size: 2.0em;
         font-weight: 400;
     }
 
-    .index-0 .div-btn
+    .explore-p
     {
-        padding-left: 10px;
-        padding-top: 80px;
-    }
+        min-height: 40vh; 
+        padding: 50px;
+        background: #f2f2f2;
+        position: relative;
 
-    .home-row
-    {
-        height: auto;
-        padding-top: 50px;
-        height: 600px;
-        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+        h2
+        {
+            padding-left: 20px;
+            font-weight: 800;
+            line-height: 1.6em;
+            color: $brand-color;
+        }
 
-    .home-row .home-row-header
-    {
-       font-size: 1.6em; 
-       font-weight: 800;
-       padding-top: 60px;
-       color: #fff;
-    }
 
-    .home-row .home-row-p
-    {
-       padding-top: 30px; 
-       padding: 50px;
-       height: 180px;
-       font-size: 1.4em; 
-       font-weight: 200;
-    }
-    .home-row .venue-room
-    {
-        height: 300px;
-        padding-top: 40px;
-    }
 
-    .home-row .btn-row
-    {
-        padding-top: 100px; 
-    }
+        .media
+        {
+            margin-top: 30px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #fff;
+            color: $brand-color;
+        }
+        .explore-left
+        {
+            background-image: url('bed.jpeg');
+            width: 80%; 
+            height: 100%;
+        }
 
+
+        .media-body
+        {
+            padding: 15px; 
+            
+            h1
+            {
+                font-weight: 800;
+                font-size: 1.7em;
+                line-height: 2.1em;
+
+                a
+                {
+                    text-decoration: none; 
+                    color: $brand-color;
+                }
+            }
+
+        }
+    }
     .venue-row
     {
-        height: auto;
-        padding: 20px;
-    }
-
-    .venue-row h2
-    {
-        font-size: 2.2em;
-        font-weight: 600;
+        min-height: 80vh;
+        color: white;
         padding-top: 50px;
-        text-transform: uppercase;
+        position: relative;
     }
-
-    .venue-row p 
+    .venue-row .img-thumnail
     {
-        font-size: 1.8em;
-        padding-top: 80px;
-
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
     }
-    
+
+    .venue-row .about-details
+    {
+        padding-top: 40px;
+        padding-left: 50px;
+        h2
+        {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: $brand-color;
+        }
+
+        p
+        {
+            color: black; 
+            font-size: 1.6em;
+        }
+    }
+
+    .info
+    {
+        height: 40vh;
+        background: #f2f2f2;
+
+        h2
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        p
+        {
+            padding-top: 30px;
+            font-size: 1.4em; 
+            line-height: 1.2em;
+            width: 100%;
+        }
+    }
+
     .events-row
     {
-        height: 400px;
-        background: linear-gradient(to top, $brand-color, pink);
-        color: #fff;
+        min-height: 60vh;
+
+        h1
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 2.4em;
+            color: $brand-color;
+        }
+
+        .dates-form
+        {
+            padding-left: 15vw;
+            padding-top: 60px;
+        }
     }
 
-    .events-row .events-header
+
+    .contact
     {
-        padding-top: 50px;
-        font-size: 2.4em;
-        font-weight: 600;
+        min-height: 25vh; 
+        
+        h1
+        {
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+        h4
+        {
+            padding-top: 60px; 
+        }
     }
-    .events-row .events-p
-    {
-        padding-top: 50px;
-        font-size: 1.8em;
-        font-weight: 400;
-    }
+
 
 }
 
@@ -146,100 +203,164 @@ $padding-left: 150px;
 
     .index-0
     {
-        height: 100vh;
-        /*background: linear-gradient($brand-color, pink);*/
-        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #fff;
+        height: 60vh;
+        color: #2A2D34;
     }
 
     .index-0 .index-header
     {
-        padding-top: 100px;
-        font-weight: 1000;
-        font-size: 4.4em;
+        padding-top: 40px;
+        font-weight: 800;
+        line-height: 1.7em;
+        font-size: 4.0em;
         letter-spacing: 5px;
     }
     .index-0 .index-par
     {
-        padding-left: 80px;
-        padding-top: 100px;
-        font-size: 3.2em;
-        font-weight: 800;
+        padding-top: 30px;
+        font-size: 3.0em;
     }
 
-    .index-0 .div-btn
+
+    .explore-p
     {
-        margin-left: 20px;
-        padding-top: 80px;
+        height: 40vh; 
+        padding: 50px;
+        background: #f2f2f2;
+        position: relative;
+
+        h2
+        {
+            padding-left: 20px;
+            font-weight: 800;
+            line-height: 1.6em;
+            color: $brand-color;
+        }
+
+
+
+        .media
+        {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #fff;
+            color: $brand-color;
+        }
+        .explore-left
+        {
+            background-image: url('bed.jpeg');
+            width: 80%; 
+            height: 100%;
+        }
+
+
+        .media-body
+        {
+            padding: 15px; 
+            
+            h1
+            {
+                font-weight: 800;
+                font-size: 1.7em;
+                line-height: 2.1em;
+
+                a
+                {
+                    text-decoration: none; 
+                    color: $brand-color;
+                }
+            }
+
+        }
     }
-
-
-    .home-row
-    {
-        height: 900px;
-        padding-top: 50px;
-        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .home-row .home-row-header
-    {
-       font-size: 3.4em; 
-       font-weight: 600;
-       vertical-align: middle;
-       color: #fff;
-       padding-top: 150px;
-    }
-
-    .home-row .btn-row
-    {
-        padding-top: 100px; 
-    }
-
     .venue-row
     {
-        height: 500px;
-        background-color: $brand-color;
+        height: 80vh;
         color: white;
+        padding-top: 50px;
+        position: relative;
     }
-    .venue-row .venue-header
+    .venue-row .img-thumnail
     {
-        font-size: 2.4em;
-        font-weight: 600;
         padding: 15px;
+        width: 100%;
+        border-radius: 5px;
     }
 
-    .venue-row .venue-p {
-        padding: 30px;
-        font-size: 1.8em;
-        font-weight: 400;
-    }
-
-    .venue-row .venue-room
+    .venue-row .about-details
     {
-        height: 300px;
-        padding-top: 40px;
+        padding-top: 100px;
+        padding-left: 50px;
+        h2
+        {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: $brand-color;
+        }
+
+        p
+        {
+            color: black; 
+            font-size: 1.4em;
+        }
     }
-    
+
+    .info
+    {
+        height: 40vh;
+        background: #f2f2f2;
+
+        h2
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        p
+        {
+            padding-top: 60px;
+            font-size: 1.4em; 
+            line-height: 1.2em;
+            width: 100%;
+        }
+    }
+
     .events-row
     {
-        height: 600px;
+        min-height: 60vh;
+
+        h1
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        .dates-form
+        {
+            padding-left: 10vw;
+            padding-top: 60px;
+        }
     }
 
-    .events-row .events-header
+
+    .contact
     {
-        padding-top: 50px;
-        font-size: 2.4em;
-        font-weight: 600;
-    }
-    .events-row .events-p
-    {
-        padding-top: 50px;
-        font-size: 1.8em;
-        font-weight: 400;
+        min-height: 25vh; 
+        
+        h1
+        {
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+        h4
+        {
+            padding-top: 60px; 
+        }
     }
 
 }
@@ -247,109 +368,185 @@ $padding-left: 150px;
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px ) 
 {
+    .mapouter
+    {
+        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+    }
+
     .main-dashboard
     {
         position: relative;
         padding-left: $padding-left;
     }
+
     .index-0
     {
-        height: 100vh;
-        /*background: linear-gradient($brand-color, pink);*/
-        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #fff;
-        margin-top: -10px;
+        min-height: 60vh;
+        color: #2A2D34;
     }
 
     .index-0 .index-header
     {
-        padding-top: 100px;
-        font-weight: 1000;
-        font-size: 4.4em;
+        padding-top: 30px;
+        font-weight: 800;
+        line-height: 1.7em;
+        font-size: 4.0em;
         letter-spacing: 5px;
-        /*text-transform: uppercase;*/
     }
     .index-0 .index-par
     {
-        padding-left: 80px;
-        padding-top: 100px;
-        font-size: 3.2em;
-        font-weight: 800;
-    }
-
-    .index-0 .div-btn
-    {
         padding-top: 80px;
+        font-size: 3.0em;
     }
 
-    .home-row
-    {
-        height: 900px;
-        padding-top: 50px;
-        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
 
-    .home-row .home-row-header
+    .explore-p
     {
-       font-size: 3.8em; 
-       font-weight: 600;
-       vertical-align: middle;
-       color: #fff;
-       padding-top: 150px;
-    }
-    .home-row .btn-row
-    {
-        padding-top: 100px; 
-    }
+        min-height: 40vh; 
+        padding: 50px;
+        background: #f2f2f2;
+        position: relative;
 
+        h2
+        {
+            padding-left: 20px;
+            font-weight: 800;
+            line-height: 1.6em;
+            color: $brand-color;
+        }
+
+
+
+        .media
+        {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #fff;
+            color: $brand-color;
+        }
+        .explore-left
+        {
+            background-image: url('bed.jpeg');
+            width: 80%; 
+            height: 100%;
+        }
+
+
+        .media-body
+        {
+            padding: 15px; 
+            
+            h1
+            {
+                font-weight: 800;
+                font-size: 1.7em;
+                line-height: 2.1em;
+
+                a
+                {
+                    text-decoration: none; 
+                    color: $brand-color;
+                }
+            }
+
+        }
+    }
     .venue-row
     {
-        height: 600px;
-        padding: 50px;
+        min-height: 80vh;
+        color: white;
+        padding-top: 50px;
+        position: relative;
+
+    }
+    .venue-row .img-thumnail
+    {
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
     }
 
     .venue-row .about-details
     {
-        padding-left: 50px; 
+        padding-top: 100px;
+        padding-left: 50px;
+        h2
+        {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: $brand-color;
+        }
+
+        p
+        {
+            padding-top: 60px;
+            font-size: 1.7em;
+            text-align: left;
+            color: black; 
+        }
+
+        .btn-p
+        {
+            padding-top: 60px;
+        }
     }
 
-    .venue-row h2
+    .info
     {
-        font-size: 2.6em;
-        font-weight: 600;
-        text-transform: uppercase;
+        min-height: 40vh;
+        background: #f2f2f2;
+
+        h2
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        p
+        {
+            padding-top: 60px;
+            font-size: 1.4em; 
+            line-height: 1.2em;
+            width: 100%;
+        }
     }
 
-    .venue-row p 
-    {
-        font-size: 1.8em;
-        padding-top: 40px;
-
-    }
-
-    
     .events-row
     {
-        height: 400px;
-        background: linear-gradient(to top, $brand-color, pink);
-        color: #fff;
+        min-height: 50vh;
+
+        h1
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        .dates-form
+        {
+            padding-left: 20vw;
+            padding-top: 60px;
+        }
     }
 
-    .events-row .events-header
+
+    .contact
     {
-        padding-top: 50px;
-        font-size: 3.4em;
-        font-weight: 600;
-    }
-    .events-row .events-p
-    {
-        padding-top: 50px;
-        font-size: 1.8em;
-        font-weight: 400;
+        min-height: 25vh; 
+        
+        h1
+        {
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+        h4
+        {
+            padding-top: 60px; 
+        }
     }
 
 }
@@ -357,12 +554,9 @@ $padding-left: 150px;
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px ) 
 {
-
-    .contact
+    .mapouter
     {
         background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
-        background-size: cover;
-        background-repeat: no-repeat;
     }
 
     .main-dashboard
@@ -370,107 +564,175 @@ $padding-left: 150px;
         position: relative;
         padding-left: $padding-left;
     }
+
     .index-0
     {
-        height: 100vh;
-        /*background: linear-gradient($brand-color, pink);*/
-        background: linear-gradient(to bottom, transparent, $brand-color), url("flower_white.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #fff;
-        margin-top: -10px;
+        height: 60vh;
+        color: #2A2D34;
     }
 
     .index-0 .index-header
     {
-        padding-top: 100px;
-        font-weight: 1000;
-        font-size: 4.4em;
+        padding-top: 60px;
+        font-weight: 800;
+        line-height: 1.7em;
+        font-size: 4.0em;
         letter-spacing: 5px;
-        /*text-transform: uppercase;*/
     }
     .index-0 .index-par
     {
-        padding-left: 80px;
-        padding-top: 100px;
-        font-size: 3.2em;
-        font-weight: 800;
-    }
-
-    .index-0 .div-btn
-    {
-        margin-left: 20px;
         padding-top: 80px;
-    }
-    .home-row
-    {
-        height: 900px;
-        padding-top: 50px;
-        background: linear-gradient(to top, transparent, $brand-color), url("dancing_lg.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
+        font-size: 3.0em;
     }
 
-    .home-row .home-row-header
-    {
-       font-size: 5.4em; 
-       font-weight: 600;
-       vertical-align: middle;
-       color: #fff;
-       padding-top: 150px;
-    }
-    .home-row .btn-row
-    {
-        padding-top: 100px; 
-    }
 
+    .explore-p
+    {
+        height: 40vh; 
+        padding: 50px;
+        background: #f2f2f2;
+        position: relative;
+
+        h2
+        {
+            padding-left: 20px;
+            font-weight: 800;
+            line-height: 1.6em;
+            color: $brand-color;
+        }
+
+
+
+        .media
+        {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #fff;
+            color: $brand-color;
+        }
+        .explore-left
+        {
+            background-image: url('bed.jpeg');
+            width: 80%; 
+            height: 100%;
+        }
+
+
+        .media-body
+        {
+            padding: 15px; 
+            
+            h1
+            {
+                font-weight: 800;
+                font-size: 1.7em;
+                line-height: 2.1em;
+
+                a
+                {
+                    text-decoration: none; 
+                    color: $brand-color;
+                }
+            }
+
+        }
+    }
     .venue-row
     {
-        height: 800px;
-        padding: 50px;
+        height: 80vh;
+        color: white;
+        padding-top: 50px;
+        position: relative;
+
+    }
+    .venue-row .img-thumnail
+    {
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
     }
 
     .venue-row .about-details
     {
-        padding-left: 50px; 
-    }
-
-    .venue-row h2
-    {
-        font-size: 3.2em;
-        font-weight: 600;
         padding-top: 100px;
-        text-transform: uppercase;
-    }
+        padding-left: 50px;
+        h2
+        {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: $brand-color;
+        }
 
-    .venue-row p 
+        p
+        {
+            padding-top: 60px;
+            font-size: 1.7em;
+            text-align: left;
+            color: black; 
+        }
+
+        .btn-p
+        {
+            padding-top: 60px;
+        }
+    }
+    .info
     {
-        font-size: 1.8em;
-        padding-top: 80px;
+        height: 40vh;
+        background: #f2f2f2;
 
+        h2
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        p
+        {
+            padding-top: 60px;
+            font-size: 1.4em; 
+            line-height: 1.2em;
+            width: 100%;
+        }
     }
 
-    
     .events-row
     {
-        height: 400px;
-        background: linear-gradient(to top, $brand-color, pink);
-        color: #fff;
+        min-height: 60vh;
+
+        h1
+        {
+            padding-top: 60px;
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+
+        .dates-form
+        {
+            padding-left: 20vw;
+            padding-top: 60px;
+        }
     }
 
-    .events-row .events-header
-    {
-        padding-top: 50px;
-        font-size: 3.4em;
-        font-weight: 600;
-    }
-    .events-row .events-p
-    {
-        padding-top: 50px;
-        font-size: 1.8em;
-        font-weight: 400;
-    }
 
+    .contact
+    {
+        min-height: 25vh; 
+        
+        h1
+        {
+            font-weight: 800;
+            font-size: 3.4em;
+            color: $brand-color;
+        }
+        h4
+        {
+            padding-top: 60px; 
+        }
+    }
 
 }
 

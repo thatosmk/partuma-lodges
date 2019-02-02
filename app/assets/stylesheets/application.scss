@@ -15,7 +15,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "jquery-ui";
+@import "jquery.ui.core";
+@import "jquery.ui.all";
 @import "avatar";
 @import "site";
 @import "rooms";
@@ -26,27 +27,33 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
 
 @media (min-width: 768px ) 
 {
-
-    .nav .navbar-brand
+    .navbar-default
     {
-        font-size: 2.4em;
-        font-weight: 600;
-        color: $brand-color;
-        margin-left: 40px;
-
+        padding: 20px; 
     }
 
+    .navbar-default .navbar-brand
+    {
+        font-size: 2.4em;
+        font-weight: 800;
+        color: $brand-color;
+    }
+
+    .navbar-default .navbar-brand:hover
+    {
+        color: $brand-color;  
+    }
+   
     .navbar
     {
-        height: 100px;
+        min-height: 100px;
         background-color: transparent;
-        border: none;
     }
 
     .navbar .navbar-nav li
     {
-        padding: 20px;
-        font-size: 1.2em;
+        padding: 10px;
+        font-size: 1.0em;
     }
 
     .navbar .navbar-nav li a:hover
@@ -90,10 +97,10 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
 /* Small devices (tablets, 425px and down) */
 @media (max-width: 425px ) 
 {
-    .nav .navbar-brand
+    .navbar-default .navbar-brand a
     {
         font-size: 1.4em;
-        font-weight: 600;
+        font-weight: 800;
         color: $brand-color;
         margin-left: 10px;
     

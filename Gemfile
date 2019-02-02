@@ -71,9 +71,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 # front-end gems
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.0'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-sass-rails'
 # super cool fonts(font-awesome)
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'font-awesome-sass', '~> 4.3', '>= 4.3.2.1'
