@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$brand-color: #C48E07;
+@import "variables";
+
 $padding-left: 150px;
 
 .btn
@@ -11,101 +12,95 @@ $padding-left: 150px;
     text-width: 400px;
 }
 /* Small devices (smartphones, 425px and down) */
-@media (max-width: 425px ) 
+
+.mapouter
 {
+    background: linear-gradient(to bottom, transparent, $primary-color), url("maps_find_us.png");
+}
+.index-0
+{
+    height: 90vh;
+    position: relative;
 
-    .mapouter
-    {
-        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
-    }
-    .index-0
-    {
-        height: 60vh;
-        margin-top: -10px;
-        position: relative;
-    }
-
-    .index-0 .index-header
+    .index-header
     {
         padding-top: 20px;
         font-weight: 1000;
-        font-size: 3.3em;
+        font-size: 2.8em;
         letter-spacing: 2px;
         /*text-transform: uppercase;*/
     }
-    .index-0 .index-par
+    .index-par
+    {
+        padding-top: 40px;
+        font-size: 2.4em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.explore-p
+{
+    min-height: 40vh; 
+    padding: 50px;
+    background: #f2f2f2;
+    position: relative;
+
+    h2
     {
         padding-left: 20px;
-        padding-top: 80px;
-        font-size: 2.0em;
-        font-weight: 400;
+        font-weight: 800;
+        line-height: 1.6em;
+        color: $primary-color;
     }
 
-    .explore-p
+    .media
     {
-        min-height: 40vh; 
-        padding: 50px;
-        background: #f2f2f2;
-        position: relative;
-
-        h2
-        {
-            padding-left: 20px;
-            font-weight: 800;
-            line-height: 1.6em;
-            color: $brand-color;
-        }
-
-
-
-        .media
-        {
-            margin-top: 30px;
-            border: 1px solid #fff;
-            border-radius: 5px;
-            background: #fff;
-            color: $brand-color;
-        }
-        .explore-left
-        {
-            background-image: url('bed.jpeg');
-            width: 80%; 
-            height: 100%;
-        }
-
-
-        .media-body
-        {
-            padding: 15px; 
-            
-            h1
-            {
-                font-weight: 800;
-                font-size: 1.7em;
-                line-height: 2.1em;
-
-                a
-                {
-                    text-decoration: none; 
-                    color: $brand-color;
-                }
-            }
-
-        }
-    }
-    .venue-row
-    {
-        min-height: 80vh;
-        color: white;
-        padding-top: 50px;
-        position: relative;
-    }
-    .venue-row .img-thumnail
-    {
-        padding: 15px;
-        width: 100%;
+        margin-top: 30px;
+        border: 1px solid #fff;
         border-radius: 5px;
+        background: #fff;
+        color: $primary-color;
     }
+    .explore-left
+    {
+        background-image: url('bed.jpeg');
+        width: 80%; 
+        height: 100%;
+    }
+
+    .media-body
+    {
+        padding: 15px; 
+        
+        h1
+        {
+            font-weight: 800;
+            font-size: 1.7em;
+            line-height: 2.1em;
+
+            a
+            {
+                text-decoration: none; 
+                color: $primary-color;
+            }
+        }
+
+    }
+}
+.venue-row
+{
+    min-height: 80vh;
+    color: white;
+    padding-top: 50px;
+    position: relative;
+}
+.venue-row .img-thumnail
+{
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+}
 
     .venue-row .about-details
     {
@@ -115,7 +110,7 @@ $padding-left: 150px;
         {
             font-size: 3.8em;
             font-weight: 800;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
@@ -125,27 +120,29 @@ $padding-left: 150px;
         }
     }
 
-    .info
+.info
+{
+    min-height: 50vh;
+    background: #f2f2f2;
+
+    h2
     {
-        height: 40vh;
-        background: #f2f2f2;
-
-        h2
-        {
-            padding-top: 60px;
-            font-weight: 800;
-            font-size: 3.4em;
-            color: $brand-color;
-        }
-
-        p
-        {
-            padding-top: 30px;
-            font-size: 1.4em; 
-            line-height: 1.2em;
-            width: 100%;
-        }
+        padding-top: 60px;
+        font-weight: 800;
+        font-size: 1.9em;
+        color: $primary-color;
     }
+
+    p
+    {
+        padding-top: 30px;
+        font-size: 1.4em; 
+        line-height: 1.2em;
+        letter-spacing: 0.10em;
+        text-align: justify;
+        width: 100%;
+    }
+}
 
     .events-row
     {
@@ -156,7 +153,7 @@ $padding-left: 150px;
             padding-top: 60px;
             font-weight: 800;
             font-size: 2.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         .dates-form
@@ -166,33 +163,33 @@ $padding-left: 150px;
         }
     }
 
-
-    .contact
+.contact
+{
+    min-height: 35vh; 
+    padding: 30px;
+    
+    h1
     {
-        min-height: 25vh; 
-        
-        h1
-        {
-            font-weight: 800;
-            font-size: 3.4em;
-            color: $brand-color;
-        }
-        h4
-        {
-            padding-top: 60px; 
-        }
+        padding-top: 40px; 
+        font-weight: 800;
+        font-size: 3.4em;
+        color: $primary-color;
     }
-
-
+    h4
+    {
+        padding-top: 40px; 
+        font-weight: 800;
+        font-size: 1.4em;
+        
+    }
 }
-
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px ) 
 {
     .mapouter
     {
-        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+        background: linear-gradient(to bottom, transparent, $primary-color), url("maps_find_us.png");
     }
 
     .main-dashboard
@@ -203,8 +200,7 @@ $padding-left: 150px;
 
     .index-0
     {
-        height: 60vh;
-        color: #2A2D34;
+        min-height: 50vh;
     }
 
     .index-0 .index-header
@@ -224,7 +220,7 @@ $padding-left: 150px;
 
     .explore-p
     {
-        height: 40vh; 
+        min-height: 40vh; 
         padding: 50px;
         background: #f2f2f2;
         position: relative;
@@ -234,7 +230,7 @@ $padding-left: 150px;
             padding-left: 20px;
             font-weight: 800;
             line-height: 1.6em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
 
@@ -244,7 +240,7 @@ $padding-left: 150px;
             border: 1px solid #fff;
             border-radius: 5px;
             background: #fff;
-            color: $brand-color;
+            color: $primary-color;
         }
         .explore-left
         {
@@ -267,7 +263,7 @@ $padding-left: 150px;
                 a
                 {
                     text-decoration: none; 
-                    color: $brand-color;
+                    color: $primary-color;
                 }
             }
 
@@ -275,7 +271,7 @@ $padding-left: 150px;
     }
     .venue-row
     {
-        height: 80vh;
+        min-height: 50vh;
         color: white;
         padding-top: 50px;
         position: relative;
@@ -295,7 +291,7 @@ $padding-left: 150px;
         {
             font-size: 3.8em;
             font-weight: 800;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
@@ -307,15 +303,15 @@ $padding-left: 150px;
 
     .info
     {
-        height: 40vh;
+        min-height: 40vh;
         background: #f2f2f2;
 
         h2
         {
             padding-top: 60px;
             font-weight: 800;
-            font-size: 3.4em;
-            color: $brand-color;
+            font-size: 2.8em;
+            color: $primary-color;
         }
 
         p
@@ -329,14 +325,14 @@ $padding-left: 150px;
 
     .events-row
     {
-        min-height: 60vh;
+        min-height: 40vh;
 
         h1
         {
             padding-top: 60px;
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         .dates-form
@@ -355,7 +351,7 @@ $padding-left: 150px;
         {
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
         h4
         {
@@ -370,7 +366,7 @@ $padding-left: 150px;
 {
     .mapouter
     {
-        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+        background: linear-gradient(to bottom, transparent, $primary-color), url("maps_find_us.png");
     }
 
     .main-dashboard
@@ -412,7 +408,7 @@ $padding-left: 150px;
             padding-left: 20px;
             font-weight: 800;
             line-height: 1.6em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
 
@@ -422,7 +418,7 @@ $padding-left: 150px;
             border: 1px solid #fff;
             border-radius: 5px;
             background: #fff;
-            color: $brand-color;
+            color: $primary-color;
         }
         .explore-left
         {
@@ -445,7 +441,7 @@ $padding-left: 150px;
                 a
                 {
                     text-decoration: none; 
-                    color: $brand-color;
+                    color: $primary-color;
                 }
             }
 
@@ -474,7 +470,7 @@ $padding-left: 150px;
         {
             font-size: 3.8em;
             font-weight: 800;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
@@ -501,7 +497,7 @@ $padding-left: 150px;
             padding-top: 60px;
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
@@ -522,7 +518,7 @@ $padding-left: 150px;
             padding-top: 60px;
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         .dates-form
@@ -541,7 +537,7 @@ $padding-left: 150px;
         {
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
         h4
         {
@@ -556,7 +552,7 @@ $padding-left: 150px;
 {
     .mapouter
     {
-        background: linear-gradient(to bottom, transparent, $brand-color), url("maps_find_us.png");
+        background: linear-gradient(to bottom, transparent, $primary-color), url("maps_find_us.png");
     }
 
     .main-dashboard
@@ -567,7 +563,7 @@ $padding-left: 150px;
 
     .index-0
     {
-        height: 60vh;
+        height: 65vh;
         color: #2A2D34;
     }
 
@@ -581,34 +577,42 @@ $padding-left: 150px;
     }
     .index-0 .index-par
     {
-        padding-top: 80px;
-        font-size: 3.0em;
+        color: $secondary-dark;
+        padding-top: 40px;
+        font-size: 3.3em;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 
 
     .explore-p
     {
-        height: 40vh; 
+        min-height: 50vh; 
         padding: 50px;
-        background: #f2f2f2;
+        background: $secondary-color;
         position: relative;
 
         h2
         {
             padding-left: 20px;
             font-weight: 800;
-            line-height: 1.6em;
-            color: $brand-color;
+            font-size: 2.8em;
+            line-height: 2.4em;
+            color: #fff;
         }
 
 
+        .services
+        {
+            padding-top: 50px; 
+        }
 
         .media
         {
             border: 1px solid #fff;
             border-radius: 5px;
             background: #fff;
-            color: $brand-color;
+            color: $primary-color;
         }
         .explore-left
         {
@@ -631,7 +635,7 @@ $padding-left: 150px;
                 a
                 {
                     text-decoration: none; 
-                    color: $brand-color;
+                    color: $primary-color;
                 }
             }
 
@@ -660,7 +664,7 @@ $padding-left: 150px;
         {
             font-size: 3.8em;
             font-weight: 800;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
@@ -678,22 +682,22 @@ $padding-left: 150px;
     }
     .info
     {
-        height: 40vh;
-        background: #f2f2f2;
+        min-height: 50vh;
 
         h2
         {
             padding-top: 60px;
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
         }
 
         p
         {
             padding-top: 60px;
-            font-size: 1.4em; 
-            line-height: 1.2em;
+            font-size: 1.8em; 
+            line-height: 1.4em;
+            letter-spacing: 2px;
             width: 100%;
         }
     }
@@ -701,18 +705,21 @@ $padding-left: 150px;
     .events-row
     {
         min-height: 60vh;
+        background: url("above-art-lg.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
 
         h1
         {
             padding-top: 60px;
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: #fff;
         }
 
         .dates-form
         {
-            padding-left: 20vw;
+            padding-left: 15vw;
             padding-top: 60px;
         }
     }
@@ -720,17 +727,20 @@ $padding-left: 150px;
 
     .contact
     {
-        min-height: 25vh; 
+        min-height: 35vh; 
         
         h1
         {
             font-weight: 800;
             font-size: 3.4em;
-            color: $brand-color;
+            color: $primary-color;
+            padding-top: 50px; 
         }
         h4
         {
             padding-top: 60px; 
+            font-size: 2.4em;
+            font-weight:600;
         }
     }
 
@@ -738,7 +748,7 @@ $padding-left: 150px;
 
 .sidebar
 {
-    background-color: $brand-color;
+    background-color: $primary-color;
     height: 100vh;
     color: #fff;
     margin-top: -20px;
@@ -758,7 +768,7 @@ $padding-left: 150px;
 
 .sidebar ul li a:hover
 {
-    color: $brand-color;
+    color: $primary-color;
     background-color: #fff;
 }
 
