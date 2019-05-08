@@ -1,35 +1,144 @@
+<div class="row explore-p">
+  <div class="container">
+    <div class="row">
+        <h2 class="pull-left">Explore Partuma</h2>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+    <div class="row"> 
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 services">
+            <div class="media">
+                <div class="media-left explore-left">
+                </div>
+                <div class="media-body">
+                    <h1 class="pull-left"><%= link_to "Accommodation", rooms_path %></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 services">
+            <div class="media">
+                <div class="media-left explore-left">
+                </div>
+                <div class="media-body">
+                    <h1 class="pull-left"><%= link_to "Venues", venues_path %></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 services">
+            <div class="media">
+                <div class="media-left explore-left">
+                </div>
+                <div class="media-body">
+                    <h1 class="pull-left">Jazz</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
 <div class="row venue-row">
     <div class="container">
-        <div class="col-sm-6 col-md-5 col-lg-6">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <%= image_tag("partuma_front.jpeg", class: "img-thumbnail")%>
             <br/>
             <br/>
             <br/>
             <%= image_tag("partuma_side.jpeg", class: "img-thumbnail")%>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-6 about-details">
-            <h2 class="pull-left">Parys & Tumahole</h2>
-            <p class="pull-left">The name Partuma is a combination of two locations (Parys and Tumahole) and it was named so because it is situated in between Parys Town and Tumahole Township.</p>
-            <p class="pull-left"><%= link_to "View Gallery", venues_path, class: "btn btn-lg btn-success"%></p>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 about-details">
+            <h2 class="">Celebrate in Style</h2>
+            <p class="pull-left">
+                Book a venue with us for special events.  
+                <br/>
+            </p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p class="btn-p"><%= link_to "See our venues", venues_path, class: "btn btn-lg btn-success"%></p>
         </div>
     </div>
 </div>
-
-<div class="row home-row">
+<div class="row events-row">
     <div class="row">
-        <h1 class="text-center text-muted home-row-header">Book Now @
-            +27 56 817 1123
+        <h1 class="text-center">
+            Create Unforgettable Moments
         </h1>
     </div>
-    <div class="row">
-        <p class="lead text-center" style="font-size: 2.0em; color: white; font-weight: 800; padding-top: 60px;">
-        Create Unforgettable <br />Memories
-        </p>
-    </div>
-    <div class="row btn-row text-center">
-        <%= link_to "Upcoming Events", events_path, class: "btn btn-default btn-lg"%>&nbsp;&nbsp;
-        <%= link_to "Our Previous Events", blog_path, class: "btn btn-success btn-lg"%>
+    <div class="container">
+        <div class="row dates-form">
+            <%= form_tag root_path, :method => 'get',class: "pull-left", :local => 'true' do%>
+                <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                    <%= text_field_tag :from, params[:from],placeholder: 'from...',class: "form-control datepicker", id: "from_date"%>    
+                <br/>
+                </div>
+                <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                    <%= text_field_tag :until, params[:until], placeholder: 'until...',class: "form-control datepicker", id: "until_date"%>    
+                    <br/>
+                    <br/>
+                </div>
+            <% end %>
+        </div>
+        <div class="row text-center">
+            <%= link_to "look up dates", rooms_path, class: "btn btn-info btn-lg" %>
+        </div>
     </div>
 </div>
 <div class="row contact">
+  <div class="container">
+    <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+      <h1>Events</h1>
+    </div>
+    <div class="col-xs-10 col-sm-5 col-md-5 col-lg-7">
+      <h4 class="text-muted">RSVP </h4> 
+      <h4>@
+            +27 56 817 1123
+      </h4>
+    </div>
+  </div>
 </div>
+<div class="row info">
+  <div class="container">
+    <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+    </div>
+    <div class="col-xs-12 col-sm-7 col-md-5 col-lg-7">
+      <h2>A little bit more about...</h2>
+      <br/>
+      <h3>Parys & Tumahole</h3>
+      <p>
+        The name Partuma is a combination of two locations (Parys and Tumahole) and it was named so because it is 
+        situated in between Parys Town and Tumahole Township.
+        <br/>
+        <br/>
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+$(function() {
+    var check_in = $('#from_date').val();
+
+    $('#from_date').datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: 0,
+
+        onSelect: function(){
+            var dat = document.getElementById('from_date');
+            var selected = $(this).val();
+            check_in = selected;
+        }
+    });
+
+    $('#until_date').datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: check_in,
+
+        onSelect: function(){
+            var dat = document.getElementById('from_date');
+            var selected = $(this).val();
+        }
+    });
+});
+</script>
