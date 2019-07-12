@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
               <% sum = 0%>
-              <%= line_chart [{  name: "Weekly Web Traffic", data: @visits.group_by_week(:started_at).count.map {|x,y| { x=> (sum+=y)}}.reduce({}, :merge)}],colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors"  %>
+              <%= line_chart [{  name: "Weekly Web Traffic", data: @visits.group_by_week(:started_at).count.map {|x,y| { x=> (sum+=y)}}},colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors"  %>
             </div>
         </div>
         <div class="row hidden-sm">
