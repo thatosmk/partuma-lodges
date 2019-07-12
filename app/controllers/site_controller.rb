@@ -26,6 +26,7 @@ class SiteController < ApplicationController
 
   def dashboard
     @visits = Ahoy::Visit.where("referring_domain IS NOT NULL")
+    @bookings = Booking.all
     @users  = User.all
   end
 
