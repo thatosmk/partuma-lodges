@@ -6,13 +6,11 @@
         </div>
         <div class="row">
             <div class="col-sm-5 col-md-5 col-lg-5">
-                <%= pie_chart @visits.group(:city).count, donut: true,title: "People Visiting partuma.co.za", download: true %>
+                <%= pie_chart @visits.group(:device_type).count, donut: true,title: "People Visiting partuma.co.za" %>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
               <% sum = 0%>
-              <% bsum = 0%>
-              <%= line_chart [{  name: "Weekly Web Traffic", data: @visits.group_by_week(:started_at).count.map {|x,y| { x=> (sum+=y)}}.reduce({}, :merge)},
-                              {  name: "Weekly Web Bookings", data: @bookings.group_by_week(:created_at).count.map {|x,y| {x => (bsum+=y)}}.reduce({}, :merge)}], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors", download: true  %>
+              <%= line_chart [{  name: "Weekly Web Traffic", data: @visits.group_by_week(:started_at).count.map {|x,y| { x=> (sum+=y)}}},colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors"  %>
             </div>
         </div>
         <div class="row hidden-sm">
