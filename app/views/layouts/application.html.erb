@@ -11,18 +11,55 @@
 
   <body>
     <% if current_page?(root_path)%>
-        <div class="row index-0">
-
-            <%= render 'layouts/header' %>
-
-            <div class="row text-center">
-              <p class="index-par">Feel at home <br/> with us</p>
-              <br/>
-              <br/>
-              <%= image_tag("logo-blur.png")%>
+      <div class="row index-0">
+        <%= render 'layouts/header' %>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+              <p>
+                The name Partuma is a combination of two locations (Parys and Tumahole) and it was named so because it is 
+                situated in between Parys Town and Tumahole Township.
+              </p>
             </div>
-
+            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-offset-1 col-lg-5">
+              <div class="row">
+                <div class="booking dates-form">
+                  <h2 class="text-center">Book your stay</h2>
+                  <%= form_tag root_path, :method => 'get',class: "pull-left", :local => 'true' do%>
+                    <div class="row">
+                      <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                          <%= text_field_tag :from, params[:from],placeholder: 'from...',class: "form-control datepicker", id: "from_date"%>    
+                      <br/>
+                      </div>
+                      <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                          <%= text_field_tag :until, params[:until], placeholder: 'until...',class: "form-control datepicker", id: "until_date"%>    
+                          <br/>
+                          <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                          <%= number_field_tag :adults, params[:adults],placeholder: 'adults',class: "form-control", id: "adults_num"%>    
+                      <br/>
+                      </div>
+                      <div class="col-xs-10 col-sm-6 col-lg-6 input-group-lg">
+                          <%= number_field_tag :kids, params[:kids], placeholder: 'kids',class: "form-control", id: "kids_num"%>    
+                          <br/>
+                          <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-10 col-sm-12 col-lg-12 input-group-lg">
+                        <%= link_to "Check Availability", root_path, class: "btn btn-block btn-success"%>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
         <%= yield %>
 
@@ -33,4 +70,30 @@
       <%= render 'layouts/footer' %>
     <% end %>
   </body>
+<script>
+$(function() {
+    var check_in = $('#from_date').val();
+
+    $('#from_date').datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: 0,
+
+        onSelect: function(){
+            var dat = document.getElementById('from_date');
+            var selected = $(this).val();
+            check_in = selected;
+        }
+    });
+
+    $('#until_date').datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: check_in,
+
+        onSelect: function(){
+            var dat = document.getElementById('from_date');
+            var selected = $(this).val();
+        }
+    });
+});
+</script>
 </html>

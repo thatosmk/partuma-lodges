@@ -19,9 +19,16 @@ $padding-left: 150px;
 }
 .index-0
 {
-    height: 90vh;
+    min-height: 80vh;
     position: relative;
 
+    p
+    {
+        padding-top: 120px;
+        font-weight: 450;
+        font-size: 1.8em;
+        line-height: 1.4em;
+    }
     .index-header
     {
         padding-top: 20px;
@@ -39,11 +46,37 @@ $padding-left: 150px;
     }
 }
 
-.explore-p
+.home
 {
-    min-height: 40vh; 
+    min-height: 60vh; 
     padding: 50px;
     background: #f2f2f2;
+    position: relative;
+
+    h1
+    {
+        font-weight: 800;
+        font-size: 2.8em;
+        line-height: 1.6em;
+
+    }
+
+    p
+    {
+        padding: 10px;
+        img
+        {
+            max-width: 100%;
+            height: 450px;
+        }
+    }
+}
+
+.during-div
+{
+    min-height: 60vh; 
+    padding: 50px;
+    background: #fff;
     position: relative;
 
     h2
@@ -54,19 +87,24 @@ $padding-left: 150px;
         color: $primary-color;
     }
 
-    .media
+    img
     {
         margin-top: 30px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background: #fff;
+        max-width: 100%;
+        height: 700px;
+    }
+
+    h1
+    {
+        padding-top: 200px; 
+        font-weight: 900;
         color: $primary-color;
     }
-    .explore-left
+    p
     {
-        background-image: url('bed.jpeg');
-        width: 80%; 
-        height: 100%;
+        font-size: 1.4em;
+        padding-top: 80px;
+        text-align: justify;
     }
 
     .media-body
@@ -88,12 +126,21 @@ $padding-left: 150px;
 
     }
 }
-.venue-row
+.venue-div
 {
-    min-height: 80vh;
-    color: white;
+    min-height: 70vh;
     padding-top: 50px;
     position: relative;
+
+    h1
+    {
+        font-weight: 900;
+        font-size: 2.8em;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    p{ font-size: 1.4em; line-height: 2.0em; padding-bottom: 100px;}
 }
 .venue-row .img-thumnail
 {
