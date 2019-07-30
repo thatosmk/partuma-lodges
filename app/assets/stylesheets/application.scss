@@ -20,6 +20,7 @@
 @import "avatar";
 @import "site";
 @import "rooms";
+@import "theme";
 
 $brand-color: #d0980c;
 $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
@@ -27,16 +28,11 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
 
 @media (min-width: 768px ) 
 {
-    .navbar-default
-    {
-        padding: 20px; 
-    }
 
-    .navbar-default .navbar-brand
+    .navbar-default .navbar-brand .navbar-img
     {
-        font-size: 2.4em;
-        font-weight: 800;
-        color: $brand-color;
+        max-width: 100%;
+        height: 80px;
     }
 
     .navbar-default .navbar-brand:hover
@@ -46,14 +42,18 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
    
     .navbar
     {
-        min-height: 100px;
-        background-color: transparent;
+        @include nav-bar($brand-color);
     }
 
     .navbar .navbar-nav li
     {
-        padding: 10px;
+        padding: 5px;
         font-size: 1.0em;
+    }
+    .navbar .navbar-nav li a
+    {
+        color: $brand-color; 
+        font-weight: 600;
     }
 
     .navbar .navbar-nav li a:hover
@@ -71,10 +71,12 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
 
     .footer
     {
-        background: $brand-footer-color;
-        color: #fff;
-        height: 400px;
-        padding: 20px;
+        background-image: url("chair.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #d9534f;
+        min-height: 50vh;
+        padding-top: 120px;
         margin-bottom: 0px;
     }
 
@@ -85,11 +87,11 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
     }
     .footer .text-white
     {
-        color: #fff;
+        color: #d9534f;
     }
     .footer .fa
     {
-        color: #fff;
+        color: #d9534f;
         padding-right: 10px;
     }
 }
@@ -162,7 +164,10 @@ $brand-footer-color:  #515151;//linear-gradient(to top, #515151, #800080);
         padding-right: 10px;
     }
 }
-
+.booking
+{
+    @include booking-form($brand-color);
+}
 /*
  *
  * Events views style contents 
