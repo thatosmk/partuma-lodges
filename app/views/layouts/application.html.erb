@@ -4,7 +4,18 @@
     <title>Partuma</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-3"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+        gtag('config', 'UA-91400897-3');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
