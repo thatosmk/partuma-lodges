@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  namespace :administrator do
+      resources :users
+      resources :accounts
+      resources :bookings
+      resources :events
+      resources :posts
+      resources :reports
+      resources :rooms
+      resources :rsvps
+
+      root to: "bookings#index"
+    end
   resources :reports, except: [:index]
   get 'rsvp/new'
   get 'rsvp/create'
