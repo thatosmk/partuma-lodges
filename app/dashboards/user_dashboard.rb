@@ -12,9 +12,8 @@ class UserDashboard < Administrate::BaseDashboard
     bookings: Field::HasMany,
     posts: Field::HasMany,
     reports: Field::HasMany,
-    visits: Field::HasMany.with_options(class_name: "Ahoy::Visit"),
-    avatar_attachment: Field::HasOne,
-    avatar_blob: Field::HasOne,
+    #visits: Field::HasMany.with_options(class_name: "Ahoy::Visit"),
+    avatar: Field::ActiveStorage,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -24,6 +23,8 @@ class UserDashboard < Administrate::BaseDashboard
     sign_in_count: Field::Number,
     current_sign_in_at: Field::DateTime,
     last_sign_in_at: Field::DateTime,
+    password: Field::Password,
+    password_confirmation: Field::Password,
     current_sign_in_ip: Field::String,
     last_sign_in_ip: Field::String,
     created_at: Field::DateTime,
@@ -51,9 +52,7 @@ class UserDashboard < Administrate::BaseDashboard
   bookings
   posts
   reports
-  visits
-  avatar_attachment
-  avatar_blob
+  avatar
   id
   email
   encrypted_password
@@ -75,25 +74,11 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  account
-  bookings
-  posts
-  reports
-  visits
-  avatar_attachment
-  avatar_blob
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  sign_in_count
-  current_sign_in_at
-  last_sign_in_at
-  current_sign_in_ip
-  last_sign_in_ip
   username
   admin
+  password
+  password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

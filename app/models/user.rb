@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :posts
   has_many :reports
-  has_many :visits, class_name: "Ahoy::Visit"
+  #has_many :visits, class_name: "Ahoy::Visit"
 
 
   # associate avatars with the model
