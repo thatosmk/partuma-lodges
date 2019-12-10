@@ -39,7 +39,10 @@ body
 {
     background-color: $secondary;
     min-height: 100vh;
-
+    @media(min-width: 768px)
+    {
+        min-height: 75vh;
+    }
     h1
     {
         font-weight: 800;  
