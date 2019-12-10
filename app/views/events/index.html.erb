@@ -1,55 +1,22 @@
 <div class="container">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="row">
-                <div class="events-div-0">
-                    <h1 class="jazz-header">Upcoming Events</h1>  
-                </div>
-            </div>
-            <div class="row">
-                <h2 class="page-header"><%= pluralize(@events.count, 'Upcoming Event')%></h2>
-                <% @events.each do |event| %>
-                <div class="row media-events-row">
-                    <div class="media media-middle">
-                        <div class="media-left">
-                            <%= image_tag("sax_event.jpeg", class: "media-object", alt: "", height: 150)%>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading"><%= event.name %></h4>
-                            <p class="text-muted"><%= event.description %></p>
-                            <strong>when: </strong>
-                            <p class="text-info"><%= event.event_date %>, at <%= event.event_time %></p>
-                            <!--button class="btn btn-default btn-lg" type="button" data-toggle="modal" data-target="#rsvpModal">Interested?</button -->
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-            </div>
-            <div class="row">
-                <h1 class="page-header text-muted">Previous Events</h1>
-                <p><%= link_to "View Previous Events", blog_path, class: "btn btn-lg btn-warning"%></p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
+  <div class="text-center py-5">
+      <h2 class="text-warning">Upcoming Events</h2>  
+  </div>
+  <div class="text-center py-5">
+    <h2 class="text-warning"><%= pluralize(@events.count, 'Upcoming Event')%></h2>
+    <hr/>
+    <div class="card-deck">
+      <% @events.each do |event| %>
+        <div class="card">
+          <%= image_tag("sax_event.jpeg", class: "media-object", alt: "", height: 150)%>
+          <div class="card-body">
+            <h4 class="card-title"><%= event.name %></h4>
+            <p class="card-text text-muted"><%= event.description %></p>
+            <strong>when: </strong>
+            <p class="text-info card-text"><%= event.event_date %>, at <%= event.event_time %></p>
+          </div>
         </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Confirmation Required</h4>
-            </div>
-            <div class="modal-body">
-                <p class="lead">Confirm attendance to event</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Confirm</button>
-            </div>
-        </div>
+      <% end %>
     </div>
-</div
+  </div>
+</div>

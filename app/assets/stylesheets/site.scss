@@ -2,7 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+
 h2
 {
     font-weight: 800;
+}
+
+.about, .contact
+{
+    background-color: $secondary;
 }

@@ -12,9 +12,7 @@
  *
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$primary: #e53c0d;
-$secondary:  #fff7e5;//linear-gradient(to top, #515151, #800080);
-$warning: #d0980c;
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
 @import "jquery.ui.core";
@@ -29,6 +27,13 @@ $warning: #d0980c;
 body
 {
     x-overflow: hidden;
+}
+
+.navbar .navbar-brand
+{
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 26px;
 }
 .index-0
 {

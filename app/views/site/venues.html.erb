@@ -1,42 +1,26 @@
-<div class="container">
-    <p id="notice"><%= notice %></p>
-    <div class="row">
-        <div class="wrapper-row">
-            <h1 class="rooms-header">Book one of our Venues</h1>
-        </div>
-    </div>
-    <br/>
-    <br/>
-    <div class="row">
-            <br /><br />
-        <% @rooms.each do |room| %>
-            <div class="col-sm-4 col-md-4 col-lg-3 room-img-div">
-                <div class="row">
-                <% if room.images.attached? %>
-                    <p><%= image_tag(room.images.last,alt: "partuma lodge jazz club", class: "img-thumbnail", height: 250, width: 350)%></p>
-                <% end %>
-                </div>
-                <div class="row">
-                    <p class="lead pull-left"><%= room.room_name %></p>
-
-                    <p class="lead pull-right">
-                        <%= link_to "View Room", room, class: "btn btn-default pull-right" %>
-                    </p>
-                </div>
-            </div>
+<div class="container mx-2 venues">
+  <div class="text-center py-5">
+    <h2 class="text-warning">Celebrate your events with us</h2>
+  </div>
+  <div class="card-deck pb-5">
+    <% @rooms.each do |room| %>
+      <div class="card">
+        <% if room.images.attached? %>
+          <%= image_tag(room.images.last,alt: "partuma lodge jazz club", style: "max-width: 100%;")%>
         <% end %>
-    </div>
-
-    <% if user_signed_in? && current_user.admin? %>
-        <div class="row">
-            <br /><br />
-            <%= link_to "Add new room", new_room_path, class: "btn btn-info btn-lg"%>
+        <div class="card-body">
+          <h4 class="py-4 card-title"><%= room.room_name %></h4>
+          <p class="py-4 card-text">
+            <%= link_to "More Pictures", room, class: "btn btn-default pull-right" %>
+          </p>
         </div>
+      </div>
     <% end %>
-    <div class="row" style="height: 300px;"></div>
+  </div>
+
+  <% if user_signed_in? && current_user.admin? %>
+    <div class="py-5">
+      <%= link_to "Add new room", new_room_path, class: "btn btn-warning btn-lg"%>
+    </div>
+  <% end %>
 </div>
-<script>
- $(function() {
-       $('.datepicker').datepicker();
- });
-</script>

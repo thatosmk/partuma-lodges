@@ -34,7 +34,7 @@
               Stay entertained by our Jazz lounge and exotic local cousine.
             </p>
             <p class="py-5 mx-4">
-              <%= link_to "See Dates & Book Now", root_path, class: "btn btn-primary btn-lg"%>
+              <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
             </p>
           </div>
           <div class="col-md-6 col-lg-5 col-xl-5 d-none d-md-block">
@@ -56,7 +56,7 @@
             <div class="text-center">
               <%= image_tag("travel.png", style: "max-width: 100%;")%>
               <p class="py-5">
-                <%= link_to "See Dates & Book Now", root_path, class: "btn btn-primary btn-lg"%>
+                <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
               </p>
             </div>
           </div>
@@ -64,36 +64,16 @@
       </div>
       <%= yield %>
       <%= render 'layouts/footer' %>
+    <% elsif current_page?(about_path) || current_page?(contact_path)%>
+      <div class="about">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
     <% else %>
       <%= render 'layouts/header' %>
         <%= yield %>
       <%= render 'layouts/footer' %>
     <% end %>
   </body>
-<script>
-$(function() {
-    var check_in = $('#from_date').val();
-
-    $('#from_date').datepicker({
-        dateFormat: "dd-mm-yy",
-        minDate: 0,
-
-        onSelect: function(){
-            var dat = document.getElementById('from_date');
-            var selected = $(this).val();
-            check_in = selected;
-        }
-    });
-
-    $('#until_date').datepicker({
-        dateFormat: "dd-mm-yy",
-        minDate: check_in,
-
-        onSelect: function(){
-            var dat = document.getElementById('from_date');
-            var selected = $(this).val();
-        }
-    });
-});
-</script>
 </html>
