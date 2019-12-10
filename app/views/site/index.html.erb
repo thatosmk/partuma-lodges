@@ -1,68 +1,49 @@
-<div class="row home">
-  <h1 class="text-center">We're going to make this place your home</h1>
-  <br/>
-  <div class="row">
-    <div class="text-center">
-      <p>
-        <%= image_tag("bed-3.jpeg")%>
-      </p>
-      <br/>
-      <br/>
-      <p>
-        <%= image_tag("bed-4.jpeg")%>
-      </p>
-      <br/>
-      <br/>
-      <br/>
-      <p>
-        <%= link_to "view rooms", rooms_path, class: "btn btn-warning btn-lg"%>
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row during-div">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="row">
-        <%= image_tag("chef.jpg")%>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="row">
-        <h1>Restaurant &amp; Jazz Bar</h1>
-        <p class="text-muted">
-        It is not always possible to take time off away on a private or romantic getaway, when this is possible
-        you want to enjoy yourself. The great news is that you don't have to spend a lot of money or go very far. 
+<div class="card-deck py-5 mx-2">
+  <div class="card">
+    <%= image_tag("partuma_side.jpeg", style: "max-width: 100%;")%>
+    <div class="card-body">
+      <h4 class="card-title">
+        Venues for your celebrations
+        </h4>
+        <p class="card-text">
+          Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
         </p>
-      </div>
+        <%= link_to "See Venue Gallery", root_path, class: "card-link"%>
+    </div>
+  </div>
+
+  <div class="card">
+    <%= image_tag("bed-3.jpeg", style: "max-width: 100%;")%>
+    <div class="card-body">
+      <h4 class="card-title">
+        Our top-of-the-range rooms
+        </h4>
+        <p class="card-text">
+          Relax in our suites for a day or more, enjoy our multiple amenities and comfort.
+        </p>
+        <%= link_to "Book a Room", root_path, class: "card-link"%>
+    </div>
+  </div>
+
+  <div class="card">
+    <%= image_tag("chef.jpg", style: "max-width: 100%;")%>
+    <div class="card-body">
+      <h4 class="card-title">
+        Restaurant &amp; Jazz Lounge
+      </h4>
+      <p class="card-text">
+        Enjoy a mix of jazz and local genres with friends in our jazz lounge. We offer the best food from our top chef while you relax.
+      </p>
     </div>
   </div>
 </div>
 
-<div class="container venue-div">
-  <div class="row">
-    <h1 class="text-center">A Perfect Venue <br/>for your Events</h1>
-    <p class="text-center text-muted">
-        Book a venue for your special events.  
-        <br/>
-    </p>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <%= image_tag("partuma_front.jpeg", class: "img-thumbnail")%>
-        <br/>
-        <br/>
-        <br/>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 about-details">
-        <%= image_tag("partuma_side.jpeg", class: "img-thumbnail")%>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-    </div>
-    <p class="btn-p text-center"><%= link_to "More venues here", venues_path, class: "btn btn-lg btn-success"%></p>
+
+<div class="py-5">
+  <div class="text-center">
+    <h2 class="text-warning">
+      What our guests say about us
+    </h2>
   </div>
 </div>
+
