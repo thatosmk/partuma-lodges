@@ -7,8 +7,47 @@
   <div class="card-deck py-2">
     <% @rooms.each do |room| %>
       <div class="card">
+    <% if room.images.attached?%>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% for i in 0..room.images.count do %>
+            <% if i == 0 %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="active"></li>
+            <% else %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
+            <% end %>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+          <% @i = 0%>
+          <% room.images.each do |img|%>
+            <% if @i == 0 %>
+              <div class="carousel-item active">
+                <%= image_tag(img, class: "d-block w-100 img-fluid", alt: "partuma slide")%>
+              </div>
+              <% @i = @i + 1%>
+            <% else %>
+              <div class="carousel-item">
+                <%= image_tag(img, class: "d-block w-100", alt: "partuma slide")%>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <% end %>
         <div class="card-body">
           <p class="text-muted py-4"><%= room.description %></p>
+          <h4 class="card-title">
+            R <%= room.price %> per night
+          </h4>
 
           <h6 class="card-title text-muted">Amenities</h6>
           <hr/>
@@ -24,30 +63,10 @@
           </p>
           <%= link_to "Book Room", room, class: "btn btn-danger btn-block" %>
           <% if user_signed_in? && current_user.admin? %>
-            <%= link_to "Add Pictures", edit_room_path(room), class: "btn btn-warning btn-lg"%>
+            <%= link_to "Edit room", edit_room_path(room), class: "btn btn-warning btn-block"%>
           <% end %>
         </div>
-      </div>
-      <div class="row py-4">
-      <% if room.images.attached? %>
-          <% room.images.each do |img|%>
-              <p><%= image_tag(img, class: "img-thumbnail", height: 450, width: 350)%></p>
-          <% end %>
-      <% end %>
       </div>
     <% end %>
   </div>
-
-
-    <% if user_signed_in? && current_user.admin? %>
-        <div class="row">
-            <%= link_to "Add new room", new_room_path, class: "btn btn-info btn-lg"%>
-        </div>
-    <% end %>
 </div>
-
-<script>
- $(function() {
-       $('.datepicker').datepicker();
- });
-</script>

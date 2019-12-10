@@ -11,25 +11,24 @@
     </div>
   <% end %>
 
-  <div class="row hidden-xs hidden-sm">
-      <div class="col-md-5 col-lg-5">
-            <%= form.label :arrive %>
-            <%= form.text_field :checkin_day, class: "form-control datepicker", id: "checkin_date", value: "#{ Date.today }" %>
-              <br/>
-      </div>
-      <div class="col-md-5 col-lg-5">
-            <%= form.label :check_out %>
-            <%= form.text_field :checkout_day, class: "form-control datepicker",id: "checkout_date", value: "#{Date.tomorrow}" %>
-            <br>
-      </div>
+  <div class="row py-4">
+    <div class="col-xs-12 col-sm-12 d-md-none d-block py-2">
+      <%= form.label :arrive %>
+      <%= form.text_field :checkin_day, class: "form-control form-control-lg datepicker", id: "checkin_date", value: "#{ Date.today }" %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 d-md-none d-block">
+      <%= form.label :checkout %>
+      <%= form.text_field :checkout_day, class: "form-control form-control-lg datepicker",id: "checkout_date", value: "#{Date.tomorrow}" %>
+    </div>
   </div>
-  <div class="row hidden-md hidden-lg">
-      <div class="col-xs-5 col-sm-6">
+  
+  <div class="row">
+      <div class="col-xs-5 col-sm-6 d-none d-md-block">
             <%= form.label :arrive %>
             <%= form.text_field :checkin_day, class: "form-control datepicker", id: "checkin_date", value: "#{ Date.today }" %>
               <br/>
       </div>
-      <div class="col-xs-5 col-sm-6">
+      <div class="col-xs-5 col-sm-6 d-none d-md-block">
             <%= form.label :check_out %>
             <%= form.text_field :checkout_day, class: "form-control datepicker",id: "checkout_date", value: "#{Date.tomorrow}" %>
             <br>
@@ -38,31 +37,27 @@
 
 <% if @room.room_type == "accommodation"%>
   <div class="row">
-      <br/>
       <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
         <%= form.label :adults %>
-        <%= form.select :adults, options_for_select([0, 1, 2, 3,4]), {}, class: "form-control" %>
+        <%= form.number_field :adults, class: "form-control form-control-lg",value: 1, required: true %>
       </div>
       <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
         <%= form.label :children %>
-        <%= form.select :children, options_for_select([0,1,2,3,4,5]), {}, class: "form-control" %>
+        <%= form.number_field :children, class: "form-control form-control-lg",value: 0, required: true %>
       </div>
   </div>
   <div class="row">
-      <br/>
       <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
         <%= form.label :number_of_rooms %>
-        <%= form.number_field :number_of_rooms, class: "form-control" %>
-        <br>
+        <%= form.number_field :number_of_rooms, class: "form-control form-control-lg", value: 1, required: true %>
       </div>
   </div>
 <% end %>
-        <br>
-
-  <div class="row">
-      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-        <%= form.submit "Create Booking", class: "btn btn-success btn-block" %>
-      </div>
+  <div class="py-4 text-center">
+    <%= form.submit "Reserve", class: "btn btn-primary btn-block" %>
+    <p class="text-muted py-4">
+      You won't be charged yet, call us within 24hrs to arrange payment.
+    </p>
   </div>
 <% end %>
 <script>

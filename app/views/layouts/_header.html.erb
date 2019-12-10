@@ -15,9 +15,6 @@
             <% if current_user.admin? %>
                 <li class="nav-item"><a class="nav-link" href="/dashboard">dashboard</a></li>
             <% end %>
-
-            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-            <li class="nav-item"><%= link_to "Profile",profile_url, class: "nav-link"%></li>
             <li class=""><%= link_to "LOGOUT",destroy_user_session_path, method: :delete, class: "nav-link active"%></li>
         <% else %>
             <li class="nav-item"><a class="nav-link" href="/venues">Venues</a></li>

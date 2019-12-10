@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :rooms do
       resources :bookings
+      get '/confirmation', to: "bookings#confirmation"
   end
   resources :events
 

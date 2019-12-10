@@ -23,6 +23,8 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def confirmation
+  end
   # POST /bookings
   # POST /bookings.json
   def create
@@ -40,7 +42,7 @@ class BookingsController < ApplicationController
           BookingMailer.with(user: current_user).booking_confirmation_email.deliver_now
           BookingMailer.with(user: current_user).received_booking_email.deliver_now
 
-        format.html { redirect_to rooms_url, notice: 'Booking was successfully created.' }
+        format.html { redirect_to room_confirmation_path(@room), notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }

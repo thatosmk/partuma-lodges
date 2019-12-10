@@ -1,75 +1,65 @@
-<div class="container">
-    <div class="row">
-        <h1 class="page-header"><%= @room.room_name %></h1>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-7 col-lg-7">
-        <% if @room.images.attached? %>
-                <%= image_tag(@room.images.last, alt: "partuma lodge jazz club", class: "img-thumbnail img-preview")%><br />
-        <% end %>
-        </div>
-        <div class="col-sm-6 col-md-5 col-lg-5 room-book-details">
-            <% if @room.room_type == "accommodation"%>
-                <div class="row">
-                    <h3 class="text-muted text-center">R <%= @room.price %> per night</h3>
-                </div>
-                <div class="row booking-form">
-                    <%= render 'bookings/form', room: @room %>
-                </div>
-                <div class="row">
-                    <p class="alert text-center text-muted">You won't be charged yet.</p>
-                </div>
+<div class="container py-5">
+  <div class="card py-5">
+    <% if @room.images.attached?%>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% for i in 0..@room.images.count do %>
+            <% if i == 0 %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="active"></li>
             <% else %>
-                <div class="row">
-                    <p class="lead text-center">R <%= @room.price %> per day</p>
-                </div>
-                <div class="row booking-form">
-                    <%= render 'bookings/form', room: @room %>
-                </div>
-                <div class="row">
-                    <p class="alert text-center text-muted">You won't be charged yet.</p>
-                </div>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
             <% end %>
-        </div>
-    </div>
-    <div class="row">
-        <h2 class="page-header text-muted"><%= @room.room_name %></h2>
-        <p class="lead">
-          <%= @room.description %>
-        </p>
-    </div>
-
-    <div class="row">
-        <h2 class="page-header">Amenities</h2>
-        <div class="col-sm-3 col-md-3 col-lg-3">
-            <ul class="list-group">
-            <% @room.amenities.split(",").each do |an|%>
-                <li class=""><%= an %></li>
-                <br/>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+          <% @i = 0%>
+          <% @room.images.each do |img|%>
+            <% if @i == 0 %>
+              <div class="carousel-item active">
+                <%= image_tag(img, class: "d-block w-100 img-fluid", alt: "partuma slide")%>
+              </div>
+              <% @i = @i + 1%>
+            <% else %>
+              <div class="carousel-item">
+                <%= image_tag(img, class: "d-block w-100", alt: "partuma slide")%>
+              </div>
             <% end %>
-            </ul>
-          <br><br>
+          <% end %>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <% end %>
+    <div class="card-body">
+      <h2 class="card-title text-warning"><%= @room.room_name %></h2>
+      <p class="card-text text-muted">
+        <%= @room.description %>
+      </p>
+      <h4 class="card-title">
+        R <%= @room.price %> per night
+      </h4>
+      <h6 class="text-muted py-4">Amenities</h6>
+      <hr/>
+      <ul class="list-group py-4">
+        <% @room.amenities.split(",").each do |an|%>
+            <li class="nav-link disabled"><%= an %></li>
+        <% end %>
+      </ul>
+      <%= link_to "Make Reservation", new_room_booking_path(@room), class: "btn btn-primary btn-block"%>
     </div>
-    <div class="row">
-        <h1 class="page-header text-warning">Photos</h1>
-        <div class="row">
-            <% @room.images.each do |img|%> 
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                    <%= image_tag(img,  class: "img-div", alt: "partuma lodge jazz club" )%> 
-                    <br/><br/>
-                </div>
-            <% end %>
-        </div>
-    </div>
-        <% if user_signed_in? && current_user.admin? %>
-    <div class="row">
-        <h1 class="page-header page-muted">Make Changes</h1>
+  </div>
+  <% if user_signed_in? && current_user.admin? %>
+    <h2 class="py-5 text-warning">Make Changes</h2>
+    <div class="py-5">
         <%= link_to 'Edit Room', edit_room_path(@room), class: "btn btn-primary btn-lg" %> 
         <%= link_to 'Delete Room', room_path(@room), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg"%>
         <%= link_to "Add Pictures", edit_room_path(@room), class: "btn btn-warning btn-lg"%>
-        <% end %>
     </div>
-</div>
-<div class="row" style="height: 200px;"></div>
+  <% end %>
 </div>

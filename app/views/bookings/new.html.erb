@@ -1,15 +1,8 @@
 <div class="container">
-    <div class="row">
-        <h1 class="page-header">New Booking</h1>
-    </div>
-    <div class="row">
-        <div class="col-sm-10 col-md-10 col-lg-10">
-        </div>
-    </div>
-    <div class="row">
-        <%= render 'form', booking: @booking %>
-    </div>
-    <div class="row" style="height: 400px;"></div>
+  <div class="py-2">
+    <h4 class="text-primary">R <%= @room.price%> per night</h4>
+  </div>
+  <%= render 'form', booking: @booking %>
 </div>
 
 
