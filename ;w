@@ -1,0 +1,50 @@
+<% if current_user.admin? %>             
+<div class="container-fluid">
+    <div class="row col-sm-11 col-md-11 col-lg-11 main-dashboard">
+        <div class="row">
+            <%= render "topbar"%>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <%= pie_chart @visits.group(:device_type).count, donut: true,title: "People Visiting partuma.co.za" %>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <% sum = 0%>
+              <%= line_chart [{  name: "Weekly Web Traffic", data: @visits.group_by_week(:started_at).count.map {|x,y| { x=> (sum+=y)}}},colors: ["#b00", "#666"], xtitle: "Date accessed", ytitle: "Total No of People", title: "Total Daily Visitors"  %>
+            </div>
+        </div>
+        <div class="row hidden-sm">
+            <h1 class="text-muted page-header">Total Sign ups</h1>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Created Date</th>
+                </tr>
+                <% @users.each do |user|%>
+                    <% if !user.account.nil? %>
+                    <tr>
+                        <td><%= link_to user.id, "#"%></td>
+                        <td><%= user.account.name%></td>
+                        <td><%= user.account.surname%></td>
+                        <td><%= user.email%></td>
+                        <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
+                    </tr>
+                    <% else %>
+                    <tr>
+                        <td><%= link_to user.id, "#"%></td>
+                        <td></td>
+                        <td></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.created_at.strftime("%d, %B, %Y")%></td>
+                    </tr>
+
+                    <% end %>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</div>
+<% end %>

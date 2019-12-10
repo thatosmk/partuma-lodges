@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :set_room
+  before_action :authenticate_user!
 
   # GET /bookings
   # GET /bookings.json
@@ -22,6 +23,8 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def confirmation
+  end
   # POST /bookings
   # POST /bookings.json
   def create
@@ -31,7 +34,15 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to rooms_url, notice: 'Booking was successfully created.' }
+          # update booked for rooms
+          @booked = @room.booked
+          @room.update_attributes(booked: @booked+1)
+
+          # send an email to both Customer and Partuma
+          BookingMailer.with(user: current_user).booking_confirmation_email.deliver_now
+          BookingMailer.with(user: current_user).received_booking_email.deliver_now
+
+        format.html { redirect_to room_confirmation_path(@room), notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
@@ -72,7 +83,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:account_id, :adults, :children, :room_id, :user_id, :checkin_day, :checkout_day)
+      params.require(:booking).permit(:account_id, :adults, :children, :room_id, :user_id, :checkin_day, :checkout_day, :number_of_rooms)
     end
 
     def set_room

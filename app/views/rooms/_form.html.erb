@@ -10,92 +10,87 @@
       </ul>
     </div>
   <% end %>
-
   <div class="row">
-      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
-        <%= form.text_field :room_name, class: "form-control", placeholder: "room name" %>
-        <br>
-        <br>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-6 col-md-6 col-lg-6">
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-6">
+                <%= form.label :room_name %> 
+                <%= form.text_field :room_name, class: "form-control", placeholder: "room name" %>
+                <br>
+                <br>
+              </div>
+          </div>
+      
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-6">
+                <%= form.label :room_description %> 
+                <%= form.text_area :description, class: "form-control", placeholder: "more details", rows: 15 %>
+                <br>
+                <br>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                <%= form.label :price %>
+                <%= form.text_field :price, class: "form-control", placeholder: "price for room" %>
+                <br>
+                <br>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                <%= form.label :room_type %>
+                <%= form.select :room_type, options_for_select(["accommodation", "venue"]), {}, class: "form-control", placeholder: "price for room" %>
+                <br>
+                <br>
+              </div>
+          </div>
+
       </div>
+
+      <div class="col-xs-offset-1 col-xs-10 col-sm-6 col-md-6 col-lg-6">
+
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-6">
+                <%= form.label :amenities %> 
+                <%= form.text_area :amenities, class: "form-control", placeholder: "list amenities", rows: 15 %>
+                <br>
+                <br>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-6">
+                    <%= form.label :allowed_checkin_time %> 
+                <%= form.text_field :check_in, class: "form-control datepicker" %>
+                <br><br>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-6">
+                    <%= form.label :allowed_checkout_time %> 
+                <%= form.text_field :check_out, class: "form-control datepicker" %>
+                <br><br>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-6">
+                    <%= form.label :upload_images %> 
+                    <%= form.file_field :images, multiple: true %> 
+                <br/><br/>
+              </div>
+          </div>
+      
+      </div>
+  
   </div>
 
   <div class="row">
-      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
-        <%= form.text_area :description, class: "form-control", placeholder: "more details", rows: 15 %>
-        <br>
-        <br>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.label :amenities %> 
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
-        <%= form.text_area :amenities, class: "form-control", placeholder: "list amenities", rows: 15 %>
-        <br>
-        <br>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
-        <%= form.label :price %>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
-        <%= form.text_field :price, class: "form-control", placeholder: "price for room" %>
-        <br>
-        <br>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.label :allowed_checkin_time %> 
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-    <%= form.text_field :check_in, class: "form-control datepicker" %>
-        <br><br>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.label :allowed_checkout_time %> 
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-        <%= form.text_field :check_out, class: "form-control datepicker" %>
-        <br><br>
-      </div>
-  </div>
-
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.label :upload_images %> 
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-            <%= form.file_field :images, multiple: true %> 
-        <br/><br/>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-3">
-        <%= form.submit "Create Room", class: "btn btn-success btn-block" %>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-md-4 col-lg-4">
+        <%= form.submit "Create Room", class: "btn btn-success btn-lg" %>
       </div>
   </div>
 <% end %>

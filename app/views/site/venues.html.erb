@@ -1,0 +1,31 @@
+<div class="mx-2 venues">
+  <div class="container">
+    <div class="text-center py-5">
+      <h2 class="text-warning">Celebrate your events with us</h2>
+    </div>
+    <div class="text-center py-4">
+      <%= image_tag("page-under.png", class: "img-fluid rounded", alt: "partuma-party Responsive image")%>
+    </div>
+    <div class="card-deck pb-5">
+      <% @rooms.each do |room| %>
+        <div class="card">
+          <% if room.images.attached? %>
+            <%= image_tag(room.images.last,alt: "partuma lodge jazz club", style: "max-width: 100%;")%>
+          <% end %>
+          <div class="card-body">
+            <h4 class="py-4 card-title"><%= room.room_name %></h4>
+            <p class="py-4 card-text">
+              <%= link_to "More Pictures", room, class: "btn btn-default pull-right" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? && current_user.admin? %>
+      <div class="py-5">
+        <%= link_to "Add new room", new_room_path, class: "btn btn-warning btn-lg"%>
+      </div>
+    <% end %>
+  </div>
+</div>

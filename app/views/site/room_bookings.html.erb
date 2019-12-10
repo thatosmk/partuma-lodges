@@ -1,9 +1,10 @@
+<% if current_user.admin? %>             
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
-            <%= render 'site/sidebar' %> 
+    <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 main-dashboard">
+        <div class="row hidden-xs">
+            <%= render 'site/topbar' %> 
         </div>
-        <div class="col-sm-9 col-md-8 col-lg-8 main-wrapper">
+        <div class="row">
             <div class="row">
                 <h1 class="page-header">Bookings</h1>
             </div>  
@@ -13,18 +14,22 @@
                     <tr>
                         <th>Room Name</th>
                         <th>Customer</th>
+                        <th>Age</th>
                         <th>Check-in</th>
                         <th>Check-out</th>
                         <th>Adults</th>
                         <th>Children</th>
+                        <th>Price</th>
                     </tr>
                     <% @bookings.each do |booking| %>
                         <tr>
-                            <td><%= link_to booking.room.room_name, booking.room %></td>
+                            <td><%= link_to "User here", "#" %></td>
                             <td><%= Account.find(booking.account_id).name %>&nbsp;&nbsp;<%= Account.find(booking.account_id).surname %></td>
+                            <td><%= time_ago_in_words(User.find(booking.user_id).account.dob)%></td>
                             <td><%= booking.checkin_day%></td>
                             <td><%= booking.checkout_day%></td>
                             <td><%= booking.adults%></td>
+                            <td><%= booking.children%></td>
                             <td><%= booking.children%></td>
                         </tr>
                     <% end %>
@@ -33,3 +38,4 @@
         </div>
     </div>
 </div>
+<% end %>

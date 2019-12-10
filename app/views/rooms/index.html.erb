@@ -1,48 +1,72 @@
 <div class="container">
-    <p id="notice"><%= notice %></p>
-    <div class="row">
-        <h1 class="page-header">Book a room</h1>
-    </div>
-    <div class="row">
-        <h3 class="text-muted">Filter</h3>
-        <%= form_tag rooms_path, :method => 'get',class: "form-inline pull-left input-group-lg", :local => 'true' do%>
-            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "search..." %>    
-            <%= text_field_tag :from_date, params[:from_date], class: "form-control datepicker", placeholder: "search..." %>    
-            <%= submit_tag "search", class: "btn btn-default btn-lg" %>
- <br>
-<br>
-<br>
-<br>
+  <div class="text-center py-5">
+    <h2 class="text-warning">Book one of our rooms</h2>
+  </div>
 
-       <% end %>
-    </div>
-    
-    <div class="row">
-        <% @rooms.each do |room| %>
-            <div class="col-sm-4 col-md-4 col-lg-3">
-                <% if room.images.attached? %>
-                <%= image_tag(room.images.last, class: "img-thumbnail")%>
-                <% end %>
-                <%= link_to room.room_name, room %>
-            <%= room.description %>
-            <%= room.amenities %>
-            <%= room.price %>
-            <%= room.booking_id %>
-            <%= room.check_in %>
-            <%= room.check_out %>
-            <% if user_signed_in? && current_user.admin? %>
-                <%= link_to 'Edit', edit_room_path(room) %>
-                <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <h4 class="py-2">Standard Rooms</h4>
+  <div class="card-deck py-2">
+    <% @rooms.each do |room| %>
+      <div class="card">
+    <% if room.images.attached?%>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% for i in 0..room.images.count do %>
+            <% if i == 0 %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="active"></li>
+            <% else %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
             <% end %>
-            </div>
-        <% end %>
-    </div>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+          <% @i = 0%>
+          <% room.images.each do |img|%>
+            <% if @i == 0 %>
+              <div class="carousel-item active">
+                <%= image_tag(img, class: "d-block w-100 img-fluid", alt: "partuma slide")%>
+              </div>
+              <% @i = @i + 1%>
+            <% else %>
+              <div class="carousel-item">
+                <%= image_tag(img, class: "d-block w-100", alt: "partuma slide")%>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <% end %>
+        <div class="card-body">
+          <p class="text-muted py-4"><%= room.description %></p>
+          <h4 class="card-title">
+            R <%= room.price %> per night
+          </h4>
 
-<%= link_to 'New Room', new_room_path %>
-<div class="row" style="height: 300px;"></div>
+          <h6 class="card-title text-muted">Amenities</h6>
+          <hr/>
+          <ul class="list-group pb-4">
+            <% room.amenities.split(",").each do |am| %>
+                <li class="nav-link disabled"><%= am %></li>
+            <% end %>
+          </ul>
+          <h6 class="card-title text-muted">Check-in Times</h6>  
+          <hr/>
+          <p class="card-text text-muted">
+            Anytime after <%= room.check_in %>
+          </p>
+          <%= link_to "Book Room", room, class: "btn btn-danger btn-block" %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to "Edit room", edit_room_path(room), class: "btn btn-warning btn-block"%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<script>
- $(function() {
-       $('.datepicker').datepicker();
- });
-</script>

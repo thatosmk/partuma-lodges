@@ -1,25 +1,69 @@
 <div class="container">
     <div class="row">
-        <h1 class="page-header">Hello, <%= @user.account.name %></h1>
-    </div>
-    
-    <% if !@user.avatar.attached? %>
-    <div class="row">
-        <h3 class="text-muted">Add Profile Picture</h3>
-        
-        <%= link_to "Add Profile Picture", edit_account_path(@user.account.id), class: "btn btn-primary btn-lg" %>
-    </div>
-    <% else %>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <% if !@user.avatar.attached? %>
+                <div class="row text-center">
+                    <h3 class="text-muted">Add Profile Picture</h3>
+                    
+                    <%= link_to "Add Profile Picture", avatar_create_path, class: "btn btn-default btn-lg" %>
+                </div>
+            <% else %>
+                <div class="row text-center">
+                    <br>
+                    <br>
+                    <%= image_tag(current_user.avatar, class: "img-circle-profile") %>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="text-muted">Settings</h3>
+                    <%= link_to "Change Profile Picture", avatar_create_path, class: "btn btn-default btn-lg" %>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="co-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div class="row hidden-sm hidden-md hidden-lg" style="padding-top: 50px;"></div>
+            <div class="row"> 
+                <div class="co-xs-12 hidden-sm hidden-md hidden-lg" style="padding-left: 20px;">
+                    <h1 class="page-header">Hello, <%= @user.account.name %></h1>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 text-muted"> 
+                    <p>Name:</p>
+                    <p>Surname:</p>
+                    <p>DOB:</p>
+                    <p>email:</p>
+                    <p>address:</p>
+                    <br class="hidden-xs">
+                    <p>cel:</p>
+                </div>
+                <div class="col-xs-8 col-sm-5 col-md-4 col-lg-4"> 
+                    <p><%= @user.account.name%></p>
+                    <p><%= @user.account.surname%></p>
+                    <p><%= @user.account.dob%></p>
+                    <p><%= @user.email%></p>
+                    <% if @user.account.address.nil?%>
+                        <p class="text-muted"><%= link_to "add address", edit_account_path(@user.account)%></p>
+                    <% else %>
+                        <p><%= @user.account.address%></p>
+                    <% end %>
+                    <p><%= @user.account.cel%></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="co-xs-12 hidden-sm hidden-md hidden-lg" style="padding-left: 20px;padding-top: 50px;">
+                    <%= link_to "edit account", edit_account_path(@user.account), class: "text-danger"%>
+                    <%= link_to "delete account", edit_account_path(@user.account), class: "text-muted"%>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="text-muted page-header">Previous Bookings/RSVPs</h2>
+                <%= link_to "back", :back, class: "btn btn-default"%>
+            </div>
+        </div>
+    </div>     
      
-    <div class="row">
-        <%= image_tag(current_user.avatar, class: "img-circle-profile") %>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3 class="text-muted">Change Profile Picture</h3>
-        <%= link_to "Add Profile Picture", avatar_create_path, class: "btn btn-primary btn-lg" %>
-    </div>
-    <% end %>
     <div class="row" style="height: 300px;"></div>
 </div>

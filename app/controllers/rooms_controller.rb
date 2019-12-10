@@ -5,12 +5,13 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.where(room_type: "accommodation").all
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @booking = Booking.new
   end
 
   # GET /rooms/new
@@ -26,7 +27,10 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
-    @room.images.attach(params[:room][:images])
+    if params[:room][:images]
+        @room.images.attach(params[:room][:images])
+    end
+
 
     respond_to do |format|
       if @room.save
@@ -42,7 +46,9 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update
-    @room.images.attach(params[:room][:images])
+    if params[:room][:images]
+        @room.images.attach(params[:room][:images])
+    end
     respond_to do |format|
       if @room.update(room_params)
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }
@@ -72,6 +78,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:room_name, :description, :amenities, :price, :booking_id, :check_in, :check_out)
+      params.require(:room).permit(:room_name, :description, :amenities, :price, :booking_id, :check_in, :check_out, :room_type, :booked, :quantity)
     end
 end

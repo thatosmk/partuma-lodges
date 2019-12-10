@@ -4,14 +4,78 @@
     <title>Partuma</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-3"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+        gtag('config', 'UA-91400897-3');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <%= render 'layouts/header' %>
-    <%= yield %>
+    <% if current_page?(root_path)%>
+      <div class="index-0">
+        <%= render 'layouts/header' %>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
+              <h1>
+                One-of-a-kind experience in Parys
+              </h1>
+              <p class="pt-4 text-muted">
+                We host your events and provide accommodation while you are on holiday. 
+                Stay entertained by our Jazz lounge and exotic local cousine.
+              </p>
+              <p class="py-5">
+                <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
+              <div class="py-5">
+                <%= image_tag("travel.png", style: "max-width: 100%;")%>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-2 d-block d-md-none">
+            <div class="col-xs-12">
+              <h1 class="mx-4">
+                One-of-a-kind experience in Parys
+              </h1>
+              <p class="pt-4 mx-4 text-muted">
+                We host your events and provide accommodation while you are on holiday. 
+                Stay entertained by our Jazz lounge and exotic local cousine.
+              </p>
+              <div class="text-center">
+                <%= image_tag("travel.png", style: "max-width: 100%;")%>
+                <p class="py-5">
+                  <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= yield %>
       <%= render 'layouts/footer' %>
+    <% elsif current_page?(about_path) || current_page?(contact_path)%>
+      <div class="about">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+    <% else %>
+      <%= render 'layouts/header' %>
+        <%= yield %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

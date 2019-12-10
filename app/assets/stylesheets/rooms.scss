@@ -1,8 +1,48 @@
 // This scss file manages the Rooms views
-.room-showcase
-{
-   margin-right: 60px; 
 
+.wrapper-row
+{
+    background-color:#b8860b;
+    color: #fff;
+    height: 300px;
+    border-radius: 5px;
+}
+.wrapper-row .rooms-header
+{
+    color: #fff;
+    font-size: 4.0em;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 110px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.room-img-div
+{
+    height: 300px;
+    padding: 15px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.img-preview
+{
+    height: 500px;
+}
+.room-book-details
+{
+    border: 1px solid #001234;
+    border-radius: 25px;
+    height: auto;
+    padding: 15px;
+    position: relative;
+}
+.room-book-details .booking-form
+{
+    padding-left: 80px;
+    padding-top: 30px;
+    
 }
 .room-showcase .img-show
 {
@@ -10,3 +50,10 @@
     height: 400px;
     width: 100%;
 }
+
+.img-div
+{
+    border-radius: 15px;
+    width: 360px;
+}
+

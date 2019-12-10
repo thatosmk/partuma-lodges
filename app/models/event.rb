@@ -2,6 +2,7 @@ class Event < ApplicationRecord
 
     # associate model with picture of the event(many)
     has_many_attached :images
+    has_many_attached :rsvps
 
     #validations
     validates_presence_of :name

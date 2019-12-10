@@ -1,0 +1,20 @@
+<% if current_user.admin? %>             
+<div class="container-fluid">
+    <div class="row col-sm-11 col-md-11 col-lg-11 main-dashboard">
+        <div class="row">
+            <%= render "topbar"%>
+        </div>
+        <div class="row">
+
+            <h1 class="page-header text-muted">Monthly Reports (Website)&nbsp;&nbsp;<%= link_to "add report", new_report_path, class: "btn btn-default"%></h1>
+
+            <% @reports.each do |report|%>
+            <ul class="list">
+                <li><%= link_to report.name, report %></li>
+            </ul>
+            <% end %>
+        </div>
+    </div>
+</div>
+<div class="row" style="height: 300px;"></div>
+<% end %>

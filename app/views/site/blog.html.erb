@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row col-sm-11 col-md-11 col-lg-11 main-dashboard">
+        <div class="row">
+            <%= render "topbar"%>
+        </div>
+
+        <br>
+        <br>
+        
+        <div class="row">
+            <h1 class="page-header text-muted">Posts</h1>  
+            <br>
+                <% if @posts.count == 0 %>
+                    <div class="jumbotron">
+                        <h1 class="text-center">Nothing posted yet.</h1>
+                    </div>
+                <%else%>
+                    <% (@posts).each do |post|%>
+                        <div class="media">
+                            <div class="media-left">
+                                <p class="text-muted pull-left lead"><%= 1 %></p>
+                            </div>
+                            <div class="media-body">
+                                <p class="lead"><%= link_to post.title, post %></p>  
+                                <p class="text-muted">created <%= time_ago_in_words(post.created_at)%> ago.</p>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+        </div>
+    </div>
+</div>
+<div class="row" style="height: 200px;"></div>
