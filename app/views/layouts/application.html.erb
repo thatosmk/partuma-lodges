@@ -31,27 +31,21 @@
       <div class="index-0">
         <%= render 'layouts/header' %>
         <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
-              <h1>
-                When in Parys, <br/>
+          <div class="text-center">
+              <div class="py-2">
+                <%= image_tag("parys.jpg", style: "height: 400px; max-width: 100%;", class: "rounded")%>
+              </div>
+              <h1 class="py-4">
+                When in Parys,
                 Stay at Partuma
               </h1>
-              <p class="pt-4 text-muted">
+              <p class="text-center py-2 text-muted">
                 We host your events and provide accommodation in Parys while you are on holiday. 
                 Stay entertained by our Jazz lounge and exotic local cuisine.
               </p>
-              <p class="py-5">
-                <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
-              </p>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
-              <div class="py-5">
-                <%= image_tag("parys.jpg", style: "max-width: 100%;")%>
-              </div>
-            </div>
+              <br/>
+              <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
           </div>
-
           <div class="row mx-2 d-block d-md-none">
             <div class="text-center pt-4">
               <%= image_tag("parys.jpg", class: "rounded",style: "max-width: 100%;")%>
