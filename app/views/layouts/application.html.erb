@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Partuma</title>
+    <title>
+      <%= content_for?(:title) ? yield(:title) : 'Accommodation & Venues in Parys'%>
+      | Partuma
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name='description' content='<%= yield_meta_tag(:description, 'Parys accommodation & Venue') %>' />
+    <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'Parys lodge, venues for weddings, venues for parties, venues for birthdays, accommodation, Parys') %>' />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-3"></script>
     <script>
@@ -28,11 +34,12 @@
           <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
               <h1>
-                One-of-a-kind experience in Parys
+                When in Parys, <br/>
+                Stay at Partuma
               </h1>
               <p class="pt-4 text-muted">
-                We host your events and provide accommodation while you are on holiday. 
-                Stay entertained by our Jazz lounge and exotic local cousine.
+                We host your events and provide accommodation in Parys while you are on holiday. 
+                Stay entertained by our Jazz lounge and exotic local cuisine.
               </p>
               <p class="py-5">
                 <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
@@ -40,25 +47,28 @@
             </div>
             <div class="col-md-6 col-lg-6 col-xl-6 d-none d-md-block">
               <div class="py-5">
-                <%= image_tag("travel.png", style: "max-width: 100%;")%>
+                <%= image_tag("parys.jpg", style: "max-width: 100%;")%>
               </div>
             </div>
           </div>
 
           <div class="row mx-2 d-block d-md-none">
-            <div class="col-xs-12">
-              <h1 class="mx-4">
-                One-of-a-kind experience in Parys
+            <div class="text-center pt-4">
+              <%= image_tag("parys.jpg", class: "rounded",style: "max-width: 100%;")%>
+              <br/>
+              <br/>
+            </div>
+            <div class="col-xs-12 text-center">
+              <h1 class="mx-2">
+                When in Parys,
+                Stay at Partuma
               </h1>
-              <p class="pt-4 mx-4 text-muted">
+              <p class="pt-4 mx-2 text-muted">
                 We host your events and provide accommodation while you are on holiday. 
                 Stay entertained by our Jazz lounge and exotic local cousine.
               </p>
-              <div class="text-center">
-                <%= image_tag("travel.png", style: "max-width: 100%;")%>
-                <p class="py-5">
-                  <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
-                </p>
+              <div class="py-4">
+              <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
               </div>
             </div>
           </div>

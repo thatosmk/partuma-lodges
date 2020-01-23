@@ -37,7 +37,7 @@ body
 }
 .index-0
 {
-    background-color: $secondary;
+    //background-color: $secondary;
     min-height: 100vh;
     @media(min-width: 768px)
     {
@@ -46,15 +46,15 @@ body
     h1
     {
         font-weight: 800;  
-        padding-top: 50px;
         line-height: 1.4;
-        font-size: 2.0em;
+        font-size: 2.5em;
         color: $warning;
     }
     p
     {
         font-size: 1.0em;
         line-height: 1.4;
+        text-align: justify;
     }
 
 }
