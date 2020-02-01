@@ -34,6 +34,16 @@ body
     font-weight: 800;
     letter-spacing: 2px;
     font-size: 26px;
+    color: $primary;
+}
+.navbar .lg-navbar .nav-item .nav-link
+{
+    color: #fff;
+}
+.navbar .lg-navbar .nav-item .active
+{
+    border: 1px solid $primary;
+    border-radius: 5px;
 }
 .index-0
 {

@@ -8,7 +8,7 @@
         <p class="card-text">
           Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
         </p>
-        <%= link_to "See Venue Gallery", venues_path, class: "card-link"%>
+        <%= link_to "See Venue Gallery", venues_path, class: "btn btn-primary"%>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
         <p class="card-text">
           Relax in our suites for a day or more, enjoy our multiple amenities and comfort.
         </p>
-        <%= link_to "Book a Room", rooms_path, class: "card-link"%>
+        <%= link_to "Book a Room", rooms_path, class: "btn btn-primary"%>
     </div>
   </div>
 
@@ -38,17 +38,58 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="card-deck py-5">
+    <div class="card d-none d-lg-inline">
+      <%= image_tag("partuma_side.jpeg", style: "height: 180; max-width: 100%;")%>
+      <div class="card-body">
+        <h4 class="card-title">
+          Host your event with us
+          </h4>
+          <p class="card-text">
+            Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
+          </p>
+          <%= link_to "See Venue Gallery", venues_path, class: "btn btn-primary"%>
+      </div>
+    </div>
 
-<div class="py-5 mx-2 guests">
-  <div class="text-center">
+    <div class="card px-2 d-none d-lg-inline">
+      <%= image_tag("bed-3.jpeg", style: "height: 180; max-width: 100%;")%>
+      <div class="card-body">
+        <h4 class="card-title">
+          Our top-of-the-range rooms
+          </h4>
+          <p class="card-text">
+            Relax in our suites for a day or more, enjoy our multiple amenities and comfort.
+          </p>
+          <%= link_to "Look at our Rooms", rooms_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+
+    <div class="card d-none d-lg-inline">
+      <%= image_tag("chef.jpg", class: 'img-fluid')%>
+      <div class="card-body">
+        <h4 class="card-title">
+          Restaurant &amp; Jazz Lounge
+        </h4>
+        <p class="card-text">
+          Enjoy a mix of jazz and local genres with friends in our jazz lounge. We offer the best food from our top chef while you relax.
+        </p>
+          <%= link_to "View Menu", root_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="py-5  guests">
+  <div class="mx-4 text-center">
     <h2 class="text-warning">
       What our guests say about us
     </h2>
-    <div class="mx-4">
-      <hr/>
-    </div>
   </div>
-  <div class="py-4 text-center">
+  <div class="py-4 px-2 text-center">
     <h4 class="text-muted">
       Lerato Majavu
     </h4>
@@ -63,7 +104,7 @@
     Partuma Lodge Isa very nice peaceful place for weddings ,parties. It is a one stop show and caters for all your needs.
     Plenty rooms to sleep over and for your wedding guest to sleep after enjoying  instead of driving.</p>
   </div>
-  <div class="py-4 text-center">
+  <div class="py-4  px-2 text-center">
     <h4 class="text-muted">
       Tebogo Tau
     </h4>
@@ -80,7 +121,7 @@
   </div>
 </div>
 
-<div class="mx-2 text-center call-us">
+<div class="py-5 mx-2 text-center call-us">
   <h2 class="text-warning">
     Call us or come visit
   </h2>
