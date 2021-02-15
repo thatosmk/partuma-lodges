@@ -6,7 +6,6 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string :cel
       t.text :address
       t.date :dob
-      t.integer :user_id
       t.references :user, foreign_key: true
 
       t.timestamps

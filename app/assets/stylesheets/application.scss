@@ -20,7 +20,7 @@
 @import "avatar";
 @import "site";
 @import "rooms";
-@import "theme";
+@import "theme.css";
 @import "datepicker.css";
 
 
@@ -38,7 +38,7 @@ body
 }
 .navbar .lg-navbar .nav-item .nav-link
 {
-    color: #fff;
+    color: $primary;
 }
 .navbar .lg-navbar .nav-item .active
 {

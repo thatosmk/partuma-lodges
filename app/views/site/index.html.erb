@@ -1,150 +1,123 @@
-<div class="card-deck py-5 mx-2 d-block d-lg-none">
-  <div class="card">
-    <%= image_tag("partuma_side.jpeg", style: "max-width: 100%;")%>
-    <div class="card-body">
-      <h4 class="card-title">
-        Host your event with us
-        </h4>
-        <p class="card-text">
-          Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
-        </p>
-        <%= link_to "See Venue Gallery", venues_path, class: "btn btn-primary"%>
-    </div>
+<!-- Hero Section -->
+<div class="container bg-img-hero space-2 space-3-top--md" style="background-image: url(<%= image_path("shape4.svg")%>);">
+  <div class="w-md-80 text-center mx-md-auto mb-9">
+    <%= image_tag("logo-blur.png", class: "img-fluid rounded")%>
+    <h3 class="h3">Partuma, Parys</h3>
+    <h1 class="display-2 font-size-48--md-down text-primary font-weight-medium">
+      Luxury stay, for less
+    </h1>
   </div>
 
-  <div class="card">
-    <%= image_tag("bed-3.jpeg", style: "max-width: 100%;")%>
-    <div class="card-body">
-      <h4 class="card-title">
-        Our top-of-the-range rooms
-        </h4>
-        <p class="card-text">
-          Relax in our suites for a day or more, enjoy our multiple amenities and comfort.
-        </p>
-        <%= link_to "Book a Room", rooms_path, class: "btn btn-primary"%>
-    </div>
-  </div>
-
-  <div class="card">
-    <%= image_tag("chef.jpg", style: "max-width: 100%;")%>
-    <div class="card-body">
-      <h4 class="card-title">
-        Restaurant &amp; Jazz Lounge
-      </h4>
-      <p class="card-text">
-        Enjoy a mix of jazz and local genres with friends in our jazz lounge. We offer the best food from our top chef while you relax.
+  <div class="w-md-80 w-lg-60 text-center mx-md-auto">
+    <div class="mb-9">
+      <p class="lead text-dark font-weight-normal">
+        We host your events and provide accommodation in Parys while you are on holiday. 
+        Stay entertained by our Jazz lounge and exotic local cuisine.
       </p>
     </div>
+
+    <div class="mb-9">
+      <span class="d-block text-secondary">Scheduled for</span>
+      <p class="h3 text-dark">Open now</p>
+      <span class="d-block text-purple">All day</span>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-wide">Explore Now</button>
   </div>
 </div>
+<!-- End Hero Section -->
+<!-- SVG Element -->
+<div class="text-center space-2-bottom mx-auto">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5px" height="149px"
+     viewBox="0 0 3 149" xml:space="preserve">
+    <path fill="#151b26" d="M1.5,149L1.5,149c-0.8,0-1.5-0.7-1.5-1.5l0-146C0,0.7,0.7,0,1.5,0h0C2.3,0,3,0.7,3,1.5v146C3,148.3,2.3,149,1.5,149z"/>
+  </svg>
+</div>
+<!-- End SVG Element -->
+    <!-- Popular Foods Section -->
+    <div id="contentSection" class="container">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
+        <span class="d-block text-purple font-weight-medium text-uppercase">Our services</span>
+        <h2 class="h1 font-weight-medium text-capitalize">Events are our speciality</h2>
+      </div>
+      <!-- End Title -->
 
-<div class="container">
-  <div class="card-deck py-5">
-    <div class="card d-none d-lg-inline">
-      <%= image_tag("partuma_side.jpeg", style: "height: 180; max-width: 100%;")%>
-      <div class="card-body">
-        <h4 class="card-title">
-          Host your event with us
-          </h4>
-          <p class="card-text">
-            Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
-          </p>
-          <%= link_to "See Venue Gallery", venues_path, class: "btn btn-primary"%>
+      <div class="row">
+        <div class="col-sm-6 col-lg-6 mb-5 mb-lg-0 lift">
+          <!-- Product -->
+          <a class="card card-shadow bg-img-hero border-0 gradient-overlay-half-dark-v2 min-height-320 text-white rounded-pseudo p-3 h-100" href="#" style="background-image: url(<%= image_path("partuma_side.jpeg") %>);">
+            <div class="mt-auto">
+              <span class="h5 font-weight-medium text-uppercase">Host your event with us</span>
+              <p class="text-white mb-2">
+                Rent out our venues and equipment for your event. We host weddings, birthdays and any kind of celebrations.
+              </p>
+            </div>
+          </a>
+          <!-- Emd Product -->
+        </div>
+
+        <div class="col-sm-6 col-lg-6 mb-5 mb-lg-0 lift">
+          <!-- Product -->
+          <a class="card card-shadow bg-img-hero border-0 gradient-overlay-half-dark-v2 min-height-320 text-white rounded-pseudo p-3 h-100" href="#" style="background-image: url(<%= image_path("bed-3.jpeg")%>);">
+            <div class="mt-auto">
+              <span class="h5 font-weight-medium text-uppercase">Luxurious rooms</span>
+              <p class="text-white mb-2">Peaceful and top-of-the range rooms</p>
+            </div>
+          </a>
+          <!-- Emd Product -->
+        </div>
       </div>
     </div>
+    <!-- End Popular Foods Section -->
 
-    <div class="card px-2 d-none d-lg-inline">
-      <%= image_tag("bed-3.jpeg", style: "height: 180; max-width: 100%;")%>
-      <div class="card-body">
-        <h4 class="card-title">
-          Our top-of-the-range rooms
-          </h4>
-          <p class="card-text">
-            Relax in our suites for a day or more, enjoy our multiple amenities and comfort.
-          </p>
-          <%= link_to "Look at our Rooms", rooms_path, class: "btn btn-primary"%>
+<!-- Menu -->
+<div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9 mt-9">
+  <span class="d-block text-purple font-weight-medium text-uppercase">Our menu</span>
+  <h2 class="h1 font-weight-medium text-capitalize">Taste this</h2>
+</div>
+<!-- End Menu -->
+<!-- Contacts Section -->
+<div class="position-relative">
+  <div class="container space-2 space-3--lg">
+    <div class="w-md-65 w-lg-40 mx-md-auto">
+      <div class="text-center mb-9">
+        <h3 class="h1 font-weight-medium text-capitalize">Contact Us</h3>
       </div>
+
+      <dl class="row">
+        <dt class="col-7">Working Hours</dt>
+        <dd class="col-5 text-right"></dd>
+        <dt class="col-7 font-weight-normal">Sunday to Monday</dt>
+        <dd class="col-5 text-right">00:00 - 23:00</dd>
+        <dt class="col-7 font-weight-normal">Address</dt>
+        <dd class="col-5 text-right">
+          2 Schochet St<br/>
+          Parys Industria, Parys<br/>
+          9585<br/>
+          South Africa
+        </dd>
+
+        <dt class="col-7">Reach us</dt>
+        <dd class="col-5 text-right"></dd>
+        <dt class="col-7 font-weight-normal">Call us</dt>
+        <dd class="col-5 text-right">
+          +27 56 817 1123
+        </dd>
+        <dt class="col-7 font-weight-normal">Email</dt>
+        <dd class="col-5 text-right">
+          partuma.lodge@gmail.com
+        </dd>
+      </dl>
     </div>
 
-    <div class="card d-none d-lg-inline">
-      <%= image_tag("chef.jpg", class: 'img-fluid')%>
-      <div class="card-body">
-        <h4 class="card-title">
-          Restaurant &amp; Jazz Lounge
-        </h4>
-        <p class="card-text">
-          Enjoy a mix of jazz and local genres with friends in our jazz lounge. We offer the best food from our top chef while you relax.
-        </p>
-          <%= link_to "View Menu", root_path, class: "btn btn-primary"%>
-      </div>
+    <div class="d-none d-sm-block position-absolute-top-right-0 w-20">
+      <%= image_tag("img9.png", class: "img-fluid", alt: "partuma-contacts")%>
     </div>
 
+    <div class="d-none d-sm-block position-absolute-bottom-left-0 w-35">
+      <%= image_tag("img8.png", class: "img-fluid", alt: "partuma-contacts")%>
+    </div>
   </div>
 </div>
-
-
-<div class="py-5  guests">
-  <div class="mx-4 text-center">
-    <h2 class="text-warning">
-      What our guests say about us
-    </h2>
-  </div>
-  <div class="py-4 px-2 text-center">
-    <h4 class="text-muted">
-      Lerato Majavu
-    </h4>
-    <div class="py-2">
-      <% for i in 1..5 do%>
-        <span class="text-warning mx-2 fa fa-star fa-1x">
-        </span>
-        <% i%>
-      <% end %>
-    </div>
-    <p class="card-text">
-    Partuma Lodge Isa very nice peaceful place for weddings ,parties. It is a one stop show and caters for all your needs.
-    Plenty rooms to sleep over and for your wedding guest to sleep after enjoying  instead of driving.</p>
-  </div>
-  <div class="py-4  px-2 text-center">
-    <h4 class="text-muted">
-      Tebogo Tau
-    </h4>
-    <div class="py-2">
-      <% for i in 1..5 do%>
-        <span class="text-warning mx-2 fa fa-star fa-1x">
-        </span>
-        <% i%>
-      <% end %>
-    </div>
-    <p class="card-text">
-    Has a spacious indoor and outdoor setup.  Vibrant. A good place to host events.
-    </p>
-  </div>
-</div>
-
-<div class="py-5 mx-2 text-center call-us">
-  <h2 class="text-warning">
-    Call us or come visit
-  </h2>
-    <div class="mx-4">
-      <hr/>
-    </div>
-  <p class="text-warning py-4">
-    <strong> Call us:</strong>
-    <br/>
-    +27 56 817 1123
-  </p>
-  <p class="text-warning">
-    <strong> Email us:</strong>
-    <br/>
-        partuma.lodge@gmail.com
-  </p>  
-  <p class="text-warning pb-5">
-    <strong> Address:</strong>
-    <br/>
-    2 Schochet St<br/>
-    Parys Industria, Parys<br/>
-    9585<br/>
-    South Africa
-  </p>  
-</div>
-
+<!-- End Contacts Section -->

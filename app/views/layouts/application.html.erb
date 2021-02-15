@@ -28,50 +28,7 @@
   </head>
 
   <body>
-    <% if current_page?(root_path)%>
-      <div class="index-0">
-        <%= render 'layouts/header' %>
-        <div class="container">
-          <div class="text-center d-md-block d-none pb-5">
-              <div class="py-2">
-                <%= image_tag("parys.jpg", style: "height: 400px; max-width: 100%;", class: "rounded")%>
-              </div>
-              <h1 class="py-4">
-                When in Parys,
-                Stay at Partuma
-              </h1>
-              <p class="text-center py-2 text-muted">
-                We host your events and provide accommodation in Parys while you are on holiday. 
-                Stay entertained by our Jazz lounge and exotic local cuisine.
-              </p>
-              <br/>
-              <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
-          </div>
-          <div class="row mx-2 d-block d-md-none">
-            <div class="text-center pt-4">
-              <%= image_tag("parys.jpg", class: "rounded",style: "max-width: 100%;")%>
-              <br/>
-              <br/>
-            </div>
-            <div class="col-xs-12 text-center">
-              <h1 class="mx-2">
-                When in Parys,
-                Stay at Partuma
-              </h1>
-              <p class="pt-4 mx-2 text-muted">
-                We host your events and provide accommodation while you are on holiday. 
-                Stay entertained by our Jazz lounge and exotic local cousine.
-              </p>
-              <div class="py-4">
-              <%= link_to "See Dates & Book Now", rooms_path, class: "btn btn-primary btn-lg"%>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    <% elsif current_page?(about_path) || current_page?(contact_path)%>
+    <% if current_page?(about_path) || current_page?(contact_path)%>
       <div class="about">
         <%= render 'layouts/header' %>
         <%= yield %>
